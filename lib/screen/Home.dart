@@ -1,5 +1,6 @@
 import 'package:blood_bond/screen/Medicine.dart';
 import 'package:blood_bond/screen/Profile.dart';
+import 'package:blood_bond/screen/Ai.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -60,7 +61,12 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MedicineScreen()));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -109,7 +115,10 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AIScreen()));
+                },
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -164,7 +173,12 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MedicineScreen()));
+                },
                 child: Container(
                   padding: EdgeInsets.all(17),
                   decoration: BoxDecoration(
@@ -404,7 +418,8 @@ class HomeScreen extends StatelessWidget {
             title: "Blood Donation",
             subtitle: "Donate or Request Blood",
             onTap: () {
-              // Navigate to Blood Donation screen
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
           SizedBox(height: 20),
@@ -415,7 +430,8 @@ class HomeScreen extends StatelessWidget {
             title: "Blood Testing",
             subtitle: "Book a Blood Test",
             onTap: () {
-              // Navigate to Blood Testing screen
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
           SizedBox(height: 20),
@@ -426,7 +442,8 @@ class HomeScreen extends StatelessWidget {
             title: "Online Consultation",
             subtitle: "Consult with Doctors",
             onTap: () {
-              // Navigate to Online Consultation screen
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
           SizedBox(height: 20),
@@ -437,7 +454,8 @@ class HomeScreen extends StatelessWidget {
             title: "Health Records",
             subtitle: "Manage Your Health Records",
             onTap: () {
-              // Navigate to Health Records Management screen
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
           SizedBox(height: 20),
@@ -448,7 +466,8 @@ class HomeScreen extends StatelessWidget {
             title: "Health Monitoring",
             subtitle: "Track Your Health",
             onTap: () {
-              // Navigate to Health Monitoring screen
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
           SizedBox(height: 20),
@@ -459,7 +478,8 @@ class HomeScreen extends StatelessWidget {
             title: "Mental Health",
             subtitle: "Access Mental Health Support",
             onTap: () {
-              // Navigate to Mental Health Support screen
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
           SizedBox(height: 20),
@@ -482,7 +502,8 @@ class HomeScreen extends StatelessWidget {
             title: "Settings",
             subtitle: "App Settings",
             onTap: () {
-              // Navigate to Settings screen
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
         ],

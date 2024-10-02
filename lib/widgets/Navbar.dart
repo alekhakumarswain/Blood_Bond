@@ -2,6 +2,10 @@ import 'package:blood_bond/screen/Medicine.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blood_bond/screen/Home.dart';
+import 'package:blood_bond/screen/Ai.dart';
+import 'package:blood_bond/screen/BloodTestPage.dart';
+
+import 'package:blood_bond/screen/BloodDonateReceivePage.dart';
 
 class NavScreen extends StatefulWidget {
   @override
@@ -11,11 +15,11 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   int _selectedIndex = 2;
   final _screens = [
-    Container(), // Blood Donation screen
-    Container(), // Blood Testing screen
+    BloodDonateReceivePage(), // Blood Donation screen
+    BloodTestPage(), // Blood Testing screen
     HomeScreen(), // Home screen
     MedicineScreen(), // Doctor Consultation screen
-    Container(), // Medicine Shop screen
+    AIScreen(), // Medicine Shop screen
   ];
 
   @override
