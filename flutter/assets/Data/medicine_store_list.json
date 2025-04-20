@@ -1,0 +1,1153 @@
+[
+    {
+        "Area": "Damana Square",
+        "StoreName": "Apollo Pharmacy",
+        "DirectionCoordination": "20°19'60.0\"N 85°49'09.3\"E",
+        "ContactNumber": 6742743747,
+        "StoreId": "ssms001",
+        "Latitude": 20.333325196038743,
+        "Longitude": 85.81923841099838,
+        "Address": "Apollo Pharmacy, Damana Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med001",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            },
+            {
+                "MedicineId": "med002",
+                "Name": "Amoxicillin 250mg",
+                "Price": 150,
+                "Dosage": "1 capsule twice daily",
+                "Category": "antibiotics",
+                "Offers": "15% off",
+                "Stock": 50,
+                "GenericAlternative": {
+                    "Name": "Generic Amoxicillin 250mg",
+                    "Price": 105
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Damana Square",
+        "StoreName": "Acharya Drug House",
+        "DirectionCoordination": "20°20'00.5\"N 85°49'17.5\"E",
+        "ContactNumber": 9861416605,
+        "StoreId": "ssms002",
+        "Latitude": 20.333466724538408,
+        "Longitude": 85.8215340764356,
+        "Address": "Acharya Drug House, Damana Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med003",
+                "Name": "Metformin 500mg",
+                "Price": 200,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "Buy 1 Get 1 Free",
+                "Stock": 30,
+                "GenericAlternative": {
+                    "Name": "Generic Metformin 500mg",
+                    "Price": 140
+                }
+            },
+            {
+                "MedicineId": "med004",
+                "Name": "Aspirin 75mg",
+                "Price": 30,
+                "Dosage": "1 tablet daily",
+                "Category": "pain-relief",
+                "Offers": "20% off",
+                "Stock": 200,
+                "GenericAlternative": {
+                    "Name": "Generic Aspirin 75mg",
+                    "Price": 21
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Damana Square",
+        "StoreName": "Nigam Drug House",
+        "DirectionCoordination": "20°19'51.9\"N 85°49'18.0\"E",
+        "ContactNumber": 6742743774,
+        "StoreId": "ssms003",
+        "Latitude": 20.331093,
+        "Longitude": 85.821663,
+        "Address": "Nigam Drug House, Damana Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med005",
+                "Name": "Ibuprofen 400mg",
+                "Price": 80,
+                "Dosage": "1 tablet every 8 hours",
+                "Category": "pain-relief",
+                "Offers": "5% off",
+                "Stock": 75,
+                "GenericAlternative": {
+                    "Name": "Generic Ibuprofen 400mg",
+                    "Price": 56
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Damana Square",
+        "StoreName": "Shree Ganesh Medical Store",
+        "DirectionCoordination": "20°20'00.8\"N 85°49'16.1\"E",
+        "ContactNumber": 7008803294,
+        "StoreId": "ssms004",
+        "Latitude": 20.333547,
+        "Longitude": 85.821148,
+        "Address": "Shree Ganesh Medical Store, Damana Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med006",
+                "Name": "Losartan 50mg",
+                "Price": 120,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "10% off",
+                "Stock": 60,
+                "GenericAlternative": {
+                    "Name": "Generic Losartan 50mg",
+                    "Price": 84
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Damana Square",
+        "StoreName": "Phoenix Drug House",
+        "DirectionCoordination": "20°19'57.1\"N 85°49'22.7\"E",
+        "ContactNumber": 9861578238,
+        "StoreId": "ssms005",
+        "Latitude": 20.332526,
+        "Longitude": 85.822973,
+        "Address": "Phoenix Drug House, Damana Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med007",
+                "Name": "Cetirizine 10mg",
+                "Price": 25,
+                "Dosage": "1 tablet daily",
+                "Category": "otc",
+                "Offers": "15% off",
+                "Stock": 150,
+                "GenericAlternative": {
+                    "Name": "Generic Cetirizine 10mg",
+                    "Price": 17
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Damana Square",
+        "StoreName": "Maa Tarini Medical Store",
+        "DirectionCoordination": "20°20'04.3\"N 85°49'19.7\"E",
+        "ContactNumber": 9778050903,
+        "StoreId": "ssms006",
+        "Latitude": 20.334523,
+        "Longitude": 85.822124,
+        "Address": "Maa Tarini Medical Store, Damana Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med008",
+                "Name": "Azithromycin 500mg",
+                "Price": 180,
+                "Dosage": "1 tablet daily",
+                "Category": "antibiotics",
+                "Offers": "10% off",
+                "Stock": 40,
+                "GenericAlternative": {
+                    "Name": "Generic Azithromycin 500mg",
+                    "Price": 126
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "BISWAL MEDIC POINT",
+        "DirectionCoordination": "20°20'33.3\"N 85°49'19.1\"E",
+        "ContactNumber": 9937432929,
+        "StoreId": "ssms007",
+        "Latitude": 20.342594,
+        "Longitude": 85.821959,
+        "Address": "BISWAL MEDIC POINT, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med009",
+                "Name": "Glibenclamide 5mg",
+                "Price": 90,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "20% off",
+                "Stock": 80,
+                "GenericAlternative": {
+                    "Name": "Generic Glibenclamide 5mg",
+                    "Price": 63
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Apollo Pharmacy Kiit Square",
+        "DirectionCoordination": "20°21'15.6\"N 85°49'17.7\"E",
+        "ContactNumber": 7682816638,
+        "StoreId": "ssms008",
+        "Latitude": 20.354335,
+        "Longitude": 85.82157,
+        "Address": "Apollo Pharmacy Kiit Square, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med010",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 120,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Sairam Medicine Store",
+        "DirectionCoordination": "20°20'55.1\"N 85°49'28.8\"E",
+        "ContactNumber": 9938152564,
+        "StoreId": "ssms009",
+        "Latitude": 20.348637,
+        "Longitude": 85.824666,
+        "Address": "Sairam Medicine Store, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med011",
+                "Name": "Amlodipine 5mg",
+                "Price": 100,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "15% off",
+                "Stock": 90,
+                "GenericAlternative": {
+                    "Name": "Generic Amlodipine 5mg",
+                    "Price": 70
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "ROYAL PHARMA",
+        "DirectionCoordination": "20°20'35.3\"N 85°49'10.6\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms010",
+        "Latitude": 20.34313968156983,
+        "Longitude": 85.81961263886063,
+        "Address": "ROYAL PHARMA, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med012",
+                "Name": "Dolo 650mg",
+                "Price": 60,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 110,
+                "GenericAlternative": {
+                    "Name": "Generic Dolo 650mg",
+                    "Price": 42
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Apollo Pharmacy Damana Square",
+        "DirectionCoordination": "20°20'00.3\"N 85°49'09.7\"E",
+        "ContactNumber": 6742743747,
+        "StoreId": "ssms011",
+        "Latitude": 20.3334146167296,
+        "Longitude": 85.81934955269787,
+        "Address": "Apollo Pharmacy Damana Square, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med013",
+                "Name": "Cefixime 200mg",
+                "Price": 160,
+                "Dosage": "1 tablet twice daily",
+                "Category": "antibiotics",
+                "Offers": "10% off",
+                "Stock": 45,
+                "GenericAlternative": {
+                    "Name": "Generic Cefixime 200mg",
+                    "Price": 112
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "KIMS Medicine Store",
+        "DirectionCoordination": "20°21'16.8\"N 85°48'50.2\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms012",
+        "Latitude": 20.35465612690994,
+        "Longitude": 85.81393388613219,
+        "Address": "KIMS Medicine Store, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med014",
+                "Name": "Insulin 10ml",
+                "Price": 300,
+                "Dosage": "As prescribed",
+                "Category": "diabetes",
+                "Offers": "5% off",
+                "Stock": 20,
+                "GenericAlternative": {
+                    "Name": "Generic Insulin 10ml",
+                    "Price": 210
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Annapurna medicine store",
+        "DirectionCoordination": "20°20'13.3\"N 85°48'42.6\"E",
+        "ContactNumber": 9173375338,
+        "StoreId": "ssms013",
+        "Latitude": 20.337028856527137,
+        "Longitude": 85.81183267107583,
+        "Address": "Annapurna medicine store, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med015",
+                "Name": "Crocin 500mg",
+                "Price": 55,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 130,
+                "GenericAlternative": {
+                    "Name": "Generic Crocin 500mg",
+                    "Price": 38
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Mahesh medical store",
+        "DirectionCoordination": "20°20'59.8\"N 85°49'30.5\"E",
+        "ContactNumber": 9238598649,
+        "StoreId": "ssms014",
+        "Latitude": 20.349932384159562,
+        "Longitude": 85.82512377497888,
+        "Address": "Mahesh medical store, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med016",
+                "Name": "Enalapril 5mg",
+                "Price": 110,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "15% off",
+                "Stock": 70,
+                "GenericAlternative": {
+                    "Name": "Generic Enalapril 5mg",
+                    "Price": 77
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Maa Laxmi Drug House",
+        "DirectionCoordination": "20°20'50.1\"N 85°49'25.4\"E",
+        "ContactNumber": 9861802402,
+        "StoreId": "ssms015",
+        "Latitude": 20.347250181315953,
+        "Longitude": 85.8237280527887,
+        "Address": "Maa Laxmi Drug House, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med017",
+                "Name": "Loratadine 10mg",
+                "Price": 40,
+                "Dosage": "1 tablet daily",
+                "Category": "otc",
+                "Offers": "10% off",
+                "Stock": 140,
+                "GenericAlternative": {
+                    "Name": "Generic Loratadine 10mg",
+                    "Price": 28
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Bhagwati Medical Store",
+        "DirectionCoordination": "20°20'18.3\"N 85°48'50.2\"E",
+        "ContactNumber": 8260391065,
+        "StoreId": "ssms016",
+        "Latitude": 20.338406241675543,
+        "Longitude": 85.81393942195723,
+        "Address": "Bhagwati Medical Store, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med018",
+                "Name": "Ciprofloxacin 500mg",
+                "Price": 170,
+                "Dosage": "1 tablet twice daily",
+                "Category": "antibiotics",
+                "Offers": "10% off",
+                "Stock": 55,
+                "GenericAlternative": {
+                    "Name": "Generic Ciprofloxacin 500mg",
+                    "Price": 119
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Nigam Medicine Store",
+        "DirectionCoordination": "20°19'59.7\"N 85°49'16.7\"E",
+        "ContactNumber": 8908323672,
+        "StoreId": "ssms017",
+        "Latitude": 20.33326082858361,
+        "Longitude": 85.82131790416088,
+        "Address": "Nigam Medicine Store, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med019",
+                "Name": "Glimepiride 2mg",
+                "Price": 130,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "15% off",
+                "Stock": 65,
+                "GenericAlternative": {
+                    "Name": "Generic Glimepiride 2mg",
+                    "Price": 91
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "MedPlus Patia",
+        "DirectionCoordination": "20°20'54.0\"N 85°49'29.3\"E",
+        "ContactNumber": 6302750241,
+        "StoreId": "ssms018",
+        "Latitude": 20.348334812864305,
+        "Longitude": 85.82480385722339,
+        "Address": "MedPlus Patia, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med020",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Aditya Pharma Care",
+        "DirectionCoordination": "20°21'16.3\"N 85°49'17.8\"E",
+        "ContactNumber": 9437278558,
+        "StoreId": "ssms019",
+        "Latitude": 20.354535773784043,
+        "Longitude": 85.82161278722977,
+        "Address": "Aditya Pharma Care, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med021",
+                "Name": "Atenolol 50mg",
+                "Price": 90,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "10% off",
+                "Stock": 85,
+                "GenericAlternative": {
+                    "Name": "Generic Atenolol 50mg",
+                    "Price": 63
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Bishnuprriya Medicals",
+        "DirectionCoordination": "20°20'44.3\"N 85°49'24.7\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms020",
+        "Latitude": 20.345640385144364,
+        "Longitude": 85.82353886970272,
+        "Address": "Bishnuprriya Medicals, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med022",
+                "Name": "Dexamethasone 4mg",
+                "Price": 70,
+                "Dosage": "1 tablet daily",
+                "Category": "otc",
+                "Offers": "5% off",
+                "Stock": 95,
+                "GenericAlternative": {
+                    "Name": "Generic Dexamethasone 4mg",
+                    "Price": 49
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "SPARSH PHARMACY",
+        "DirectionCoordination": "20°21'18.5\"N 85°49'22.1\"E",
+        "ContactNumber": 9861866422,
+        "StoreId": "ssms021",
+        "Latitude": 20.35512644974413,
+        "Longitude": 85.82280326459,
+        "Address": "SPARSH PHARMACY, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med023",
+                "Name": "Levofloxacin 500mg",
+                "Price": 190,
+                "Dosage": "1 tablet daily",
+                "Category": "antibiotics",
+                "Offers": "10% off",
+                "Stock": 50,
+                "GenericAlternative": {
+                    "Name": "Generic Levofloxacin 500mg",
+                    "Price": 133
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Om Ganesh Pharma",
+        "DirectionCoordination": "20°21'00.7\"N 85°49'36.7\"E",
+        "ContactNumber": 7735364889,
+        "StoreId": "ssms022",
+        "Latitude": 20.350193629195488,
+        "Longitude": 85.82686722831991,
+        "Address": "Om Ganesh Pharma, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med024",
+                "Name": "Pioglitazone 15mg",
+                "Price": 140,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "15% off",
+                "Stock": 60,
+                "GenericAlternative": {
+                    "Name": "Generic Pioglitazone 15mg",
+                    "Price": 98
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "Hospital Pharma Oriental medicine store",
+        "DirectionCoordination": "20°20'45.5\"N 85°49'27.0\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms023",
+        "Latitude": 20.345959948840967,
+        "Longitude": 85.8241535559389,
+        "Address": "Hospital Pharma Oriental medicine store, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med025",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "First Care Pharma",
+        "DirectionCoordination": "20°21'16.1\"N 85°49'20.3\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms024",
+        "Latitude": 20.35448471316392,
+        "Longitude": 85.82229943270787,
+        "Address": "First Care Pharma, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med026",
+                "Name": "Lisinopril 10mg",
+                "Price": 130,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "10% off",
+                "Stock": 70,
+                "GenericAlternative": {
+                    "Name": "Generic Lisinopril 10mg",
+                    "Price": 91
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "ANGEL MEDICINE STORE",
+        "DirectionCoordination": "20°20'50.8\"N 85°49'22.9\"E",
+        "ContactNumber": 8637223471,
+        "StoreId": "ssms025",
+        "Latitude": 20.347433289758857,
+        "Longitude": 85.82301640887464,
+        "Address": "ANGEL MEDICINE STORE, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med027",
+                "Name": "Montelukast 10mg",
+                "Price": 150,
+                "Dosage": "1 tablet daily",
+                "Category": "otc",
+                "Offers": "10% off",
+                "Stock": 80,
+                "GenericAlternative": {
+                    "Name": "Generic Montelukast 10mg",
+                    "Price": 105
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Patia Square",
+        "StoreName": "MedPlus KIIT Road Patia",
+        "DirectionCoordination": "20°21'15.7\"N 85°49'28.2\"E",
+        "ContactNumber": 9182655086,
+        "StoreId": "ssms026",
+        "Latitude": 20.354361444074843,
+        "Longitude": 85.82448811516919,
+        "Address": "MedPlus KIIT Road Patia, Patia Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med028",
+                "Name": "Amoxicillin 500mg",
+                "Price": 200,
+                "Dosage": "1 capsule twice daily",
+                "Category": "antibiotics",
+                "Offers": "15% off",
+                "Stock": 40,
+                "GenericAlternative": {
+                    "Name": "Generic Amoxicillin 500mg",
+                    "Price": 140
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Lifecare Medipoint",
+        "DirectionCoordination": "20°20'03.0\"N 85°48'39.1\"E",
+        "ContactNumber": 7077346282,
+        "StoreId": "ssms027",
+        "Latitude": 20.334173100110295,
+        "Longitude": 85.81087122580199,
+        "Address": "Lifecare Medipoint, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med029",
+                "Name": "Sitagliptin 50mg",
+                "Price": 250,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "10% off",
+                "Stock": 30,
+                "GenericAlternative": {
+                    "Name": "Generic Sitagliptin 50mg",
+                    "Price": 175
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Harihara Medical Store",
+        "DirectionCoordination": "20°20'12.2\"N 85°48'36.0\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms028",
+        "Latitude": 20.336720454678844,
+        "Longitude": 85.80999399846701,
+        "Address": "Harihara Medical Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med030",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Aditi Medicine Store",
+        "DirectionCoordination": "20°19'59.6\"N 85°48'22.6\"E",
+        "ContactNumber": 9937239911,
+        "StoreId": "ssms029",
+        "Latitude": 20.33321706869677,
+        "Longitude": 85.80627405183549,
+        "Address": "Aditi Medicine Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med031",
+                "Name": "Metoprolol 25mg",
+                "Price": 80,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "10% off",
+                "Stock": 90,
+                "GenericAlternative": {
+                    "Name": "Generic Metoprolol 25mg",
+                    "Price": 56
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Harimala Medicine Store",
+        "DirectionCoordination": "20°20'07.6\"N 85°48'33.5\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms030",
+        "Latitude": 20.33543621951551,
+        "Longitude": 85.80929949621547,
+        "Address": "Harimala Medicine Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med032",
+                "Name": "Paracetamol 650mg",
+                "Price": 60,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "5% off",
+                "Stock": 110,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 650mg",
+                    "Price": 42
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "MAA SIDHESWORI PHARMA",
+        "DirectionCoordination": "20°21'33.9\"N 85°49'27.7\"E",
+        "ContactNumber": 7873164065,
+        "StoreId": "ssms031",
+        "Latitude": 20.359425979195713,
+        "Longitude": 85.82436564418306,
+        "Address": "MAA SIDHESWORI PHARMA, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med033",
+                "Name": "Clarithromycin 500mg",
+                "Price": 220,
+                "Dosage": "1 tablet twice daily",
+                "Category": "antibiotics",
+                "Offers": "10% off",
+                "Stock": 35,
+                "GenericAlternative": {
+                    "Name": "Generic Clarithromycin 500mg",
+                    "Price": 154
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Sasmita Drug House",
+        "DirectionCoordination": "20°20'12.2\"N 85°48'40.1\"E",
+        "ContactNumber": 9861173896,
+        "StoreId": "ssms032",
+        "Latitude": 20.336716673131395,
+        "Longitude": 85.81112598754692,
+        "Address": "Sasmita Drug House, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med034",
+                "Name": "Gliclazide 80mg",
+                "Price": 150,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "15% off",
+                "Stock": 50,
+                "GenericAlternative": {
+                    "Name": "Generic Gliclazide 80mg",
+                    "Price": 105
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Easy Healthcare And Medicines",
+        "DirectionCoordination": "20°20'03.1\"N 85°48'36.8\"E",
+        "ContactNumber": 7008194828,
+        "StoreId": "ssms033",
+        "Latitude": 20.334183930832225,
+        "Longitude": 85.81021636073417,
+        "Address": "Easy Healthcare And Medicines, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med035",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Pradyumna Bal Hospital Pharmacy",
+        "DirectionCoordination": "20°21'09.1\"N 85°48'48.3\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms034",
+        "Latitude": 20.35251855197758,
+        "Longitude": 85.81342730970601,
+        "Address": "Pradyumna Bal Hospital Pharmacy, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med036",
+                "Name": "Hydrochlorothiazide 25mg",
+                "Price": 70,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "10% off",
+                "Stock": 80,
+                "GenericAlternative": {
+                    "Name": "Generic Hydrochlorothiazide 25mg",
+                    "Price": 49
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Maa Medical Store",
+        "DirectionCoordination": "20°20'03.8\"N 85°48'34.7\"E",
+        "ContactNumber": 8658496702,
+        "StoreId": "ssms035",
+        "Latitude": 20.33439208721158,
+        "Longitude": 85.80964281895447,
+        "Address": "Maa Medical Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med037",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Jyotishree Medi Point",
+        "DirectionCoordination": "20°19'57.0\"N 85°48'21.3\"E",
+        "ContactNumber": 8270044366,
+        "StoreId": "ssms036",
+        "Latitude": 20.332491581606938,
+        "Longitude": 85.80590927142516,
+        "Address": "Jyotishree Medi Point, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med038",
+                "Name": "Cetirizine 10mg",
+                "Price": 25,
+                "Dosage": "1 tablet daily",
+                "Category": "otc",
+                "Offers": "15% off",
+                "Stock": 150,
+                "GenericAlternative": {
+                    "Name": "Generic Cetirizine 10mg",
+                    "Price": 17
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Generic adhar medicine store",
+        "DirectionCoordination": "20°19'39.3\"N 85°48'36.7\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms037",
+        "Latitude": 20.32758275668901,
+        "Longitude": 85.81018647530702,
+        "Address": "Generic adhar medicine store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med039",
+                "Name": "Amoxicillin 250mg",
+                "Price": 150,
+                "Dosage": "1 capsule twice daily",
+                "Category": "antibiotics",
+                "Offers": "15% off",
+                "Stock": 50,
+                "GenericAlternative": {
+                    "Name": "Generic Amoxicillin 250mg",
+                    "Price": 105
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Chhabindra Medical Store",
+        "DirectionCoordination": "20°15'43.1\"N 85°50'16.7\"E",
+        "ContactNumber": 9861633050,
+        "StoreId": "ssms038",
+        "Latitude": 20.26198141252356,
+        "Longitude": 85.83796651694057,
+        "Address": "Chhabindra Medical Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med040",
+                "Name": "Metformin 500mg",
+                "Price": 200,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "Buy 1 Get 1 Free",
+                "Stock": 30,
+                "GenericAlternative": {
+                    "Name": "Generic Metformin 500mg",
+                    "Price": 140
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Shanti medi point",
+        "DirectionCoordination": "20°16'14.9\"N 85°46'35.5\"E",
+        "ContactNumber": 8249212075,
+        "StoreId": "ssms039",
+        "Latitude": 20.27080706616454,
+        "Longitude": 85.7765200382586,
+        "Address": "Shanti medi point, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med041",
+                "Name": "Aspirin 75mg",
+                "Price": 30,
+                "Dosage": "1 tablet daily",
+                "Category": "pain-relief",
+                "Offers": "20% off",
+                "Stock": 200,
+                "GenericAlternative": {
+                    "Name": "Generic Aspirin 75mg",
+                    "Price": 21
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Swastik Medical Store",
+        "DirectionCoordination": "20°19'52.7\"N 85°49'08.8\"E",
+        "ContactNumber": 8338031335,
+        "StoreId": "ssms040",
+        "Latitude": 20.331302720402,
+        "Longitude": 85.81911767177935,
+        "Address": "Swastik Medical Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med042",
+                "Name": "Losartan 50mg",
+                "Price": 120,
+                "Dosage": "1 tablet daily",
+                "Category": "hypertension",
+                "Offers": "10% off",
+                "Stock": 60,
+                "GenericAlternative": {
+                    "Name": "Generic Losartan 50mg",
+                    "Price": 84
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Bharati Medicine Store",
+        "DirectionCoordination": "20°18'06.5\"N 85°49'46.6\"E",
+        "ContactNumber": 9861737008,
+        "StoreId": "ssms041",
+        "Latitude": 20.30179782561878,
+        "Longitude": 85.82960794820977,
+        "Address": "Bharati Medicine Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med043",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Biswojeet Medicine Store",
+        "DirectionCoordination": "20°16'01.8\"N 85°50'16.3\"E",
+        "ContactNumber": null,
+        "StoreId": "ssms042",
+        "Latitude": 20.26715990120887,
+        "Longitude": 85.83786969266906,
+        "Address": "Biswojeet Medicine Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med044",
+                "Name": "Cetirizine 10mg",
+                "Price": 25,
+                "Dosage": "1 tablet daily",
+                "Category": "otc",
+                "Offers": "15% off",
+                "Stock": 150,
+                "GenericAlternative": {
+                    "Name": "Generic Cetirizine 10mg",
+                    "Price": 17
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "KHUSI MEDICINE STORE",
+        "DirectionCoordination": "20°21'32.1\"N 85°49'31.0\"E",
+        "ContactNumber": 8917502987,
+        "StoreId": "ssms043",
+        "Latitude": 20.35890695849769,
+        "Longitude": 85.82527002980827,
+        "Address": "KHUSI MEDICINE STORE, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med045",
+                "Name": "Azithromycin 500mg",
+                "Price": 180,
+                "Dosage": "1 tablet daily",
+                "Category": "antibiotics",
+                "Offers": "10% off",
+                "Stock": 40,
+                "GenericAlternative": {
+                    "Name": "Generic Azithromycin 500mg",
+                    "Price": 126
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Nilachala Medi Point",
+        "DirectionCoordination": "20°20'23.6\"N 85°48'33.3\"E",
+        "ContactNumber": 7008299766,
+        "StoreId": "ssms044",
+        "Latitude": 20.339898427297506,
+        "Longitude": 85.80925516964676,
+        "Address": "Nilachala Medi Point, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med046",
+                "Name": "Metformin 500mg",
+                "Price": 200,
+                "Dosage": "1 tablet daily",
+                "Category": "diabetes",
+                "Offers": "Buy 1 Get 1 Free",
+                "Stock": 30,
+                "GenericAlternative": {
+                    "Name": "Generic Metformin 500mg",
+                    "Price": 140
+                }
+            }
+        ]
+    },
+    {
+        "Area": "Infocity Square",
+        "StoreName": "Sai Surasa Medicine Store",
+        "DirectionCoordination": "20°21'45.5\"N 85°49'47.6\"E",
+        "ContactNumber": 9938670920,
+        "StoreId": "ssms045",
+        "Latitude": 20.36264842157913,
+        "Longitude": 85.82989403841208,
+        "Address": "Sai Surasa Medicine Store, Infocity Square, Bhubaneswar, Odisha, India",
+        "Medicines": [
+            {
+                "MedicineId": "med047",
+                "Name": "Paracetamol 500mg",
+                "Price": 50,
+                "Dosage": "1 tablet every 6 hours",
+                "Category": "pain-relief",
+                "Offers": "10% off",
+                "Stock": 100,
+                "GenericAlternative": {
+                    "Name": "Generic Paracetamol 500mg",
+                    "Price": 35
+                }
+            }
+        ]
+    }
+]

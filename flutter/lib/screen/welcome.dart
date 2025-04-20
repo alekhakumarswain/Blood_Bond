@@ -34,7 +34,7 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(height: 50),
             Padding(
               padding: EdgeInsets.all(20),
-              child: Image.asset("images/bloodbond-logo.png"),
+              child: Image.asset("assets/images/bloodbond-logo.png"),
             ),
             SizedBox(height: 50),
             Text(

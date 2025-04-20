@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/gemini_service.dart';
+import '../widgets/Navbar.dart';
 
 class AIScreen extends StatefulWidget {
   @override
@@ -176,7 +177,8 @@ Example response:
         title: Text('AI Doctor Consultation'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => NavScreen())),
         ),
         backgroundColor: Colors.deepPurpleAccent,
       ),
