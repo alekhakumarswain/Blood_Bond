@@ -5,6 +5,7 @@ import '../../providers/cart_provider.dart';
 import 'MedicineDetailScreen.dart';
 import 'ShopDetailScreen.dart';
 import 'CartScreen.dart'; // Added import for CartScreen
+import 'MyMedicine.dart'; // Added import for MyMedicineScreen
 
 class MedicineScreen extends StatefulWidget {
   @override
@@ -42,6 +43,16 @@ class _MedicineScreenState extends State<MedicineScreen> {
         title: Text('Medicine Shops'),
         backgroundColor: Color(0xFFBE179A),
         actions: [
+          IconButton(
+            icon: Icon(Icons.medical_services),
+            tooltip: 'My Medicines',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyMedicineScreen()),
+              );
+            },
+          ),
           Stack(
             children: [
               IconButton(

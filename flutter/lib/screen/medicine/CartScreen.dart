@@ -82,10 +82,12 @@ class _CartScreenState extends State<CartScreen> {
                       Divider(),
                       _buildPriceRow('Total Price', cartProvider.totalAmount),
                       _buildPriceRow(
-                          'Discount (10%)', cartProvider.totalAmount * 0.10),
+                          'Discount', _calculateTotalDiscount(cartProvider)),
                       Divider(),
                       _buildPriceRow(
-                          'Final Price', cartProvider.totalAmount * 0.90),
+                          'Final Price',
+                          cartProvider.totalAmount -
+                              _calculateTotalDiscount(cartProvider)),
                       SizedBox(height: 20),
                       Text(
                         'Select Payment Method',
@@ -139,12 +141,24 @@ class _CartScreenState extends State<CartScreen> {
                               horizontal: 50, vertical: 15),
                         ),
                         onPressed: () {
+                          // Add current cart items to purchasedItems using method
+                          cartProvider.addPurchasedItems(cartProvider.items);
+                          cartProvider.clearCart();
+
                           showDialog(
                             context: context,
                             builder: (context) => AlertDialog(
-                              title: Text('Payment'),
-                              content: Text(
-                                  'This is a fake online payment popup for $_selectedPaymentMethod.'),
+                              title: Text('Payment Successful'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(Icons.check_circle,
+                                      color: Colors.green, size: 60),
+                                  SizedBox(height: 10),
+                                  Text(
+                                      'Payment successful for $_selectedPaymentMethod.'),
+                                ],
+                              ),
                               actions: [
                                 TextButton(
                                   onPressed: () => Navigator.pop(context),
@@ -186,5 +200,25 @@ class _CartScreenState extends State<CartScreen> {
         ],
       ),
     );
+  }
+
+  double _parseDiscountPercent(String offers) {
+    final RegExp regex = RegExp(r'(\d+)%');
+    final match = regex.firstMatch(offers);
+    if (match != null) {
+      return double.tryParse(match.group(1)!) ?? 0.0;
+    }
+    return 0.0;
+  }
+
+  double _calculateTotalDiscount(cartProvider) {
+    double totalDiscount = 0.0;
+    for (var item in cartProvider.items) {
+      double discountPercent = _parseDiscountPercent(item.medicine.offers);
+      double discountAmount =
+          item.medicine.price * item.quantity * discountPercent / 100;
+      totalDiscount += discountAmount;
+    }
+    return totalDiscount;
   }
 }

@@ -17,8 +17,10 @@ class CartItem {
 
 class CartProvider extends ChangeNotifier {
   List<CartItem> _items = [];
+  List<CartItem> _purchasedItems = [];
 
   List<CartItem> get items => List.unmodifiable(_items);
+  List<CartItem> get purchasedItems => List.unmodifiable(_purchasedItems);
   int get itemCount => _items.length;
   double get totalAmount =>
       _items.fold(0, (sum, item) => sum + item.totalPrice);
@@ -32,6 +34,22 @@ class CartProvider extends ChangeNotifier {
       _items[existingIndex].quantity++;
     } else {
       _items.add(CartItem(medicine: medicine, store: store));
+    }
+    notifyListeners();
+  }
+
+  void addPurchasedItems(List<CartItem> items) {
+    for (var item in items) {
+      final existingIndex = _purchasedItems.indexWhere(
+          (pItem) => pItem.medicine.medicineId == item.medicine.medicineId);
+      if (existingIndex >= 0) {
+        _purchasedItems[existingIndex].quantity += item.quantity;
+      } else {
+        _purchasedItems.add(CartItem(
+            medicine: item.medicine,
+            store: item.store,
+            quantity: item.quantity));
+      }
     }
     notifyListeners();
   }
