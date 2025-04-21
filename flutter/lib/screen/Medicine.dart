@@ -1,80 +1,195 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+
+void main() {
+  runApp(MedicineApp());
+}
+
+class MedicineApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Medicine Shops',
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: TextTheme(
+          titleLarge: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.teal[800]),
+          titleMedium: TextStyle(fontSize: 16, color: Colors.grey[600]),
+          bodyMedium: TextStyle(fontSize: 14, color: Colors.black87),
+        ),
+        cardTheme: CardTheme(
+          elevation: 4,
+          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        ),
+      ),
+      home: MedicineScreen(),
+    );
+  }
+}
 
 class MedicineScreen extends StatelessWidget {
-  final List<Map<String, dynamic>> shops = [
-    {
-      'name': 'Health Plus Pharmacy',
-      'image': 'images/shop1.jpg',
-      'rating': 4.5,
-      'address': '123 Main Street',
-      'phone': '123-456-7890',
-      'medicines': [
-        {
-          'name': 'Paracetamol',
-          'description': 'Used for pain relief and fever reduction.',
-          'price': '\$10',
-          'image': 'images/medicine1.jpg'
-        },
-        {
-          'name': 'Amoxicillin',
-          'description': 'Antibiotic used to treat bacterial infections.',
-          'price': '\$15',
-          'image': 'images/medicine2.jpg'
-        },
-      ],
-    },
-    {
-      'name': 'Wellness Pharmacy',
-      'image': null,
-      'rating': 4.0,
-      'address': '456 Market Street',
-      'phone': '987-654-3210',
-      'medicines': [
-        {
-          'name': 'Ibuprofen',
-          'description': 'Used for pain relief and inflammation.',
-          'price': '\$12',
-          'image': 'images/medicine3.jpg'
-        },
-        {
-          'name': 'Aspirin',
-          'description': 'Used for pain relief and reducing fever.',
-          'price': '\$8',
-          'image': 'images/medicine4.jpg'
-        },
-      ],
-    },
-  ];
+  Future<List<Map<String, dynamic>>> _loadShops(BuildContext context) async {
+    final String response = await DefaultAssetBundle.of(context)
+        .loadString('assets/Data/medicine_store_list.json');
+    return List<Map<String, dynamic>>.from(json.decode(response));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Medicine Shops'),
+        elevation: 2,
       ),
-      body: ListView.builder(
-        itemCount: shops.length,
-        itemBuilder: (context, index) {
-          final shop = shops[index];
-          return ListTile(
-            leading: CircleAvatar(
-              backgroundImage: shop['image'] != null
-                  ? AssetImage(shop['image'])
-                  : AssetImage('images/default_shop.png'),
-            ),
-            title: Text(shop['name']),
-            subtitle: Text('Rating: ${shop['rating']}'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ShopDetailScreen(shop: shop),
+      body: FutureBuilder<List<Map<String, dynamic>>>(
+        future: _loadShops(context),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error loading data: ${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return Center(child: Text('No shops available'));
+          }
+
+          final shops = snapshot.data!;
+          return ListView.builder(
+            padding: EdgeInsets.all(8),
+            itemCount: shops.length,
+            itemBuilder: (context, index) {
+              final shop = shops[index];
+              return Card(
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 24,
+                    backgroundColor: Colors.teal[100],
+                    child: Text(
+                      shop['StoreName'][0],
+                      style: TextStyle(fontSize: 20, color: Colors.teal[800]),
+                    ),
+                  ),
+                  title: Text(shop['StoreName'],
+                      style: Theme.of(context).textTheme.titleLarge),
+                  subtitle: Text(
+                    '${shop['Area']} • ${shop['Address']}',
+                    style: Theme.of(context).textTheme.titleMedium,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios,
+                      size: 16, color: Colors.teal),
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => MedicineDialog(shop: shop),
+                    );
+                  },
                 ),
               );
             },
           );
         },
       ),
+    );
+  }
+}
+
+class MedicineDialog extends StatelessWidget {
+  final Map<String, dynamic> shop;
+
+  MedicineDialog({required this.shop});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      title: Text(
+        shop['StoreName'],
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
+      content: Container(
+        width: double.maxFinite,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              shop['Address'],
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Contact: ${shop['ContactNumber']?.toString() ?? 'N/A'}',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Available Medicines:',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.teal[800]),
+            ),
+            SizedBox(height: 8),
+            Flexible(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: shop['Medicines'].length,
+                itemBuilder: (context, index) {
+                  final medicine = shop['Medicines'][index];
+                  return Card(
+                    elevation: 2,
+                    margin: EdgeInsets.symmetric(vertical: 4),
+                    child: ListTile(
+                      title: Text(medicine['Name'],
+                          style: Theme.of(context).textTheme.bodyMedium),
+                      subtitle: Text(
+                        'Price: ₹${medicine['Price']} • ${medicine['Offers']}',
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                      trailing: Icon(Icons.info_outline, color: Colors.teal),
+                      onTap: () {
+                        Navigator.pop(context); // Close dialog
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                MedicineDetailScreen(medicine: medicine),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text('Close', style: TextStyle(color: Colors.teal)),
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context); // Close dialog
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ShopDetailScreen(shop: shop),
+              ),
+            );
+          },
+          child: Text('View Store', style: TextStyle(color: Colors.teal)),
+        ),
+      ],
     );
   }
 }
@@ -88,54 +203,80 @@ class ShopDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(shop['name']),
+        title: Text(shop['StoreName']),
+        elevation: 2,
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            shop['image'] != null
-                ? Image.asset(shop['image'])
-                : Image.asset('images/default_shop.png'),
+            Container(
+              height: 200,
+              width: double.infinity,
+              color: Colors.teal[50],
+              child: Center(
+                child: Text(
+                  shop['StoreName'][0],
+                  style: TextStyle(fontSize: 80, color: Colors.teal[200]),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    shop['name'],
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    shop['StoreName'],
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   SizedBox(height: 8),
-                  Text('Rating: ${shop['rating']}'),
+                  Text(
+                    'Area: ${shop['Area']}',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                   SizedBox(height: 8),
-                  Text('Address: ${shop['address']}'),
+                  Text(
+                    'Address: ${shop['Address']}',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                   SizedBox(height: 8),
-                  Text('Phone: ${shop['phone']}'),
+                  Text(
+                    'Phone: ${shop['ContactNumber']?.toString() ?? 'N/A'}',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                   SizedBox(height: 16),
                   Text(
                     'Available Medicines:',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.teal[800]),
                   ),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: shop['medicines'].length,
+                    itemCount: shop['Medicines'].length,
                     itemBuilder: (context, index) {
-                      final medicine = shop['medicines'][index];
-                      return ListTile(
-                        leading: Image.asset(medicine['image']),
-                        title: Text(medicine['name']),
-                        subtitle: Text(medicine['description']),
-                        trailing: Text(medicine['price']),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  MedicineDetailScreen(medicine: medicine),
-                            ),
-                          );
-                        },
+                      final medicine = shop['Medicines'][index];
+                      return Card(
+                        child: ListTile(
+                          title: Text(medicine['Name']),
+                          subtitle: Text(
+                            'Price: ₹${medicine['Price']} • ${medicine['Offers']}',
+                          ),
+                          trailing: Icon(Icons.arrow_forward_ios,
+                              size: 16, color: Colors.teal),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    MedicineDetailScreen(medicine: medicine),
+                              ),
+                            );
+                          },
+                        ),
                       );
                     },
                   ),
@@ -150,7 +291,7 @@ class ShopDetailScreen extends StatelessWidget {
 }
 
 class MedicineDetailScreen extends StatelessWidget {
-  final Map<String, String> medicine;
+  final Map<String, dynamic> medicine;
 
   MedicineDetailScreen({required this.medicine});
 
@@ -158,39 +299,74 @@ class MedicineDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(medicine['name']!),
+        title: Text(medicine['Name']),
+        elevation: 2,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(medicine['image']!),
-            SizedBox(height: 16),
-            Text(
-              medicine['name']!,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Container(
+              height: 150,
+              width: double.infinity,
+              color: Colors.teal[50],
+              child: Center(
+                child: Text(
+                  medicine['Name'][0],
+                  style: TextStyle(fontSize: 60, color: Colors.teal[200]),
+                ),
+              ),
             ),
             SizedBox(height: 16),
             Text(
-              medicine['description']!,
-              style: TextStyle(fontSize: 16),
+              medicine['Name'],
+              style: Theme.of(context).textTheme.titleLarge,
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 8),
             Text(
-              'Price: ${medicine['price']}',
-              style: TextStyle(fontSize: 20, color: Colors.green),
+              'Category: ${medicine['Category']}',
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Handle order placement
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Order placed for ${medicine['name']}!'),
-                  ),
-                );
-              },
-              child: Text('Order Now'),
+            SizedBox(height: 8),
+            Text(
+              'Dosage: ${medicine['Dosage']}',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Price: ₹${medicine['Price']} (${medicine['Offers']})',
+              style: TextStyle(fontSize: 18, color: Colors.teal[700]),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Stock: ${medicine['Stock']}',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Generic: ${medicine['GenericAlternative']['Name']} (₹${medicine['GenericAlternative']['Price']})',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            SizedBox(height: 24),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Order placed for ${medicine['Name']}!'),
+                      backgroundColor: Colors.teal,
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                ),
+                child: Text('Order Now', style: TextStyle(fontSize: 16)),
+              ),
             ),
           ],
         ),
