@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:blood_bond/widgets/Navbar.dart';
 import 'package:blood_bond/models/medicine_store.dart';
 import 'package:blood_bond/providers/cart_provider.dart';
+import 'package:blood_bond/providers/appointment_provider.dart';
 import 'package:blood_bond/screen/medicine/CartScreen.dart';
 
 void main() {
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => MedicineProvider()),
         ChangeNotifierProvider(create: (_) => CartProvider()),
+        ChangeNotifierProvider(create: (_) => AppointmentProvider()),
       ],
       child: MaterialApp(
         title: 'Blood Bond',
