@@ -13,17 +13,27 @@ class AppointmentSlipScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Appointments'),
+        backgroundColor: Color(0xFFD32F2F),
       ),
-      body: ListView.builder(
-        itemCount: appointments.length,
-        itemBuilder: (context, index) {
-          final appointment = appointments[index];
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-            child: AppointmentCard(appointment: appointment),
-          );
-        },
-      ),
+      backgroundColor: Color.fromARGB(255, 249, 218, 218),
+      body: appointments.isEmpty
+          ? Center(
+              child: Text(
+                'No appointments booked yet.',
+                style: TextStyle(fontSize: 18, color: Colors.white70),
+              ),
+            )
+          : ListView.builder(
+              itemCount: appointments.length,
+              itemBuilder: (context, index) {
+                final appointment = appointments[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: AppointmentCard(appointment: appointment),
+                );
+              },
+            ),
     );
   }
 }
@@ -36,9 +46,16 @@ class AppointmentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.bodyMedium;
+    final textStyle = Theme.of(context)
+        .textTheme
+        .bodyMedium
+        ?.copyWith(color: const Color.fromARGB(255, 20, 19, 19));
 
     return Card(
+      color: Color.fromARGB(255, 142, 225, 226),
+      elevation: 4,
+      margin: EdgeInsets.symmetric(vertical: 6),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -59,6 +76,10 @@ class AppointmentCard extends StatelessWidget {
             Text('Type: ${appointment.appointmentType}', style: textStyle),
             SizedBox(height: 8),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 3, 150, 30),
+                foregroundColor: Color.fromARGB(255, 136, 21, 88),
+              ),
               onPressed: () {
                 // Implement PDF generation using a package like `pdf`
               },

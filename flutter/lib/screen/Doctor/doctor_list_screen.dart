@@ -159,17 +159,19 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
           ),
           const SizedBox(height: 8),
           Expanded(
-            child: ListView.separated(
+            child: GridView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 3 / 4,
+              ),
               itemCount: filteredDoctors.length,
-              separatorBuilder: (context, index) => const Divider(),
               itemBuilder: (context, index) {
                 final doctor = filteredDoctors[index];
-                return ListTile(
-                  title: Text(doctor.name),
-                  subtitle: Text('${doctor.specialty} - ${doctor.experience}'),
-                  trailing: Text(doctor.availableNow
-                      ? 'Available Now'
-                      : 'Next: ${doctor.nextSlot}'),
+                return DoctorCard(
+                  doctor: doctor,
                   onTap: () {
                     Navigator.push(
                       context,
@@ -184,6 +186,69 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class DoctorCard extends StatelessWidget {
+  final Doctor doctor;
+  final VoidCallback onTap;
+
+  const DoctorCard({Key? key, required this.doctor, required this.onTap})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final defaultIcon = Icons.person;
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.grey.shade200,
+                child: Icon(
+                  defaultIcon,
+                  size: 48,
+                  color: Colors.grey.shade600,
+                ),
+              ),
+              SizedBox(height: 12),
+              Text(
+                doctor.name,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 8),
+              Text(
+                doctor.specialty,
+                style: TextStyle(color: Colors.grey.shade700),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 8),
+              Text(
+                doctor.experience,
+                style: TextStyle(color: Colors.grey.shade700),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 8),
+              Text(
+                doctor.availableNow ? 'Available Now' : 'Not Available',
+                style: TextStyle(
+                  color: doctor.availableNow ? Colors.green : Colors.red,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
