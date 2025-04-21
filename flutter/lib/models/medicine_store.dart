@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 class Medicine {
@@ -42,7 +42,6 @@ class MedicineStore extends ChangeNotifier {
   }
 
   void addToCart(Medicine medicine) {
-    // Add logic to handle adding to cart (e.g., update CartProvider)
     print('Added ${medicine.name} to cart');
     notifyListeners();
   }
