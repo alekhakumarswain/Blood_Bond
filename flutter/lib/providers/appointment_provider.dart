@@ -30,4 +30,13 @@ class AppointmentProvider with ChangeNotifier {
         jsonEncode(_appointments.map((e) => e.toJson()).toList()));
     notifyListeners();
   }
+
+  Future<void> removeAppointment(String bookingId) async {
+    _appointments
+        .removeWhere((appointment) => appointment.bookingId == bookingId);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('appointments',
+        jsonEncode(_appointments.map((e) => e.toJson()).toList()));
+    notifyListeners();
+  }
 }
