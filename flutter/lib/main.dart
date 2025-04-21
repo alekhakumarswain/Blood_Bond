@@ -1,6 +1,8 @@
-import 'package:blood_bond/screen/welcome.dart';
 import 'package:flutter/material.dart';
-import 'package:blood_bond/screen/Home.dart';
+import 'package:provider/provider.dart';
+import 'package:blood_bond/widgets/Navbar.dart';
+import 'package:blood_bond/models/medicine_store.dart';
+import 'package:blood_bond/providers/cart_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,14 +11,20 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/welcome', // Start with WelcomeScreen
-      routes: {
-        '/welcome': (context) => WelcomeScreen(), // Route for WelcomeScreen
-        '/home': (context) => HomeScreen(), // Route for HomeScreen
-        // Add other routes as needed (e.g., '/bloodtest' for BloodTestPage)
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MedicineProvider()),
+        ChangeNotifierProvider(create: (_) => CartProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Blood Bond',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: NavScreen(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
