@@ -16,6 +16,24 @@ class ShopDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(store.storeName),
+        backgroundColor: Color(0xFFBE179A),
+        actions: [
+          Builder(
+            builder: (context) {
+              bool isNavigating = false;
+              return IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  if (isNavigating) return;
+                  isNavigating = true;
+                  Navigator.pushNamed(context, '/cart').then((_) {
+                    isNavigating = false;
+                  });
+                },
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
@@ -53,8 +71,16 @@ class ShopDetailScreen extends StatelessWidget {
                 final medicine = store.medicines[index];
                 return Card(
                   margin: EdgeInsets.symmetric(vertical: 4),
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  shadowColor: Color(0xFFBE179A).withOpacity(0.5),
                   child: ListTile(
-                    title: Text(medicine.name),
+                    title: Text(
+                      medicine.name,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -64,7 +90,8 @@ class ShopDetailScreen extends StatelessWidget {
                       ],
                     ),
                     trailing: IconButton(
-                      icon: Icon(Icons.add_shopping_cart),
+                      icon: Icon(Icons.add_shopping_cart,
+                          color: Color(0xFFBE179A)),
                       onPressed: () {
                         cartProvider.addItem(medicine, store);
                         ScaffoldMessenger.of(context).showSnackBar(

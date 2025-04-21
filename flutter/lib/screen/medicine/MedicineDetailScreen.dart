@@ -19,6 +19,24 @@ class MedicineDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(medicine.name),
+        backgroundColor: Color(0xFFBE179A),
+        actions: [
+          Builder(
+            builder: (context) {
+              bool isNavigating = false;
+              return IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  if (isNavigating) return;
+                  isNavigating = true;
+                  Navigator.pushNamed(context, '/cart').then((_) {
+                    isNavigating = false;
+                  });
+                },
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
@@ -59,7 +77,7 @@ class MedicineDetailScreen extends StatelessWidget {
                 icon: Icon(Icons.add_shopping_cart),
                 label: Text('Add to Cart'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
+                  backgroundColor: Color(0xFFBE179A),
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                 ),
                 onPressed: () {

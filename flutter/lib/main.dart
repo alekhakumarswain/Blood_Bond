@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:blood_bond/widgets/Navbar.dart';
 import 'package:blood_bond/models/medicine_store.dart';
 import 'package:blood_bond/providers/cart_provider.dart';
+import 'package:blood_bond/screen/medicine/CartScreen.dart'; // Added import for CartScreen
 
 void main() {
   runApp(MyApp());
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: NavScreen(),
+        routes: {
+          '/cart': (context) => CartScreen(),
+        },
         debugShowCheckedModeBanner: false,
       ),
     );
