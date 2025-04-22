@@ -26,7 +26,8 @@
     },
     
     "healthMetrics": {
-      "bloodPressure": "",
+      "bloodPressure": "120/80",
+      "heartRate": 72,
       "weight": 80,
       "height": 123
     },

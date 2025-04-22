@@ -89,8 +89,8 @@ class ProfileScreen extends StatelessWidget {
                   // New card to navigate to User Details screen
                   ProfileInfoCard(
                     icon: Icons.person_outline,
-                    title: "View Full Details",
-                    subtitle: "Tap to see all user details",
+                    title: "View More Details",
+                    subtitle: "Tap to see all details about you",
                     onEdit: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(

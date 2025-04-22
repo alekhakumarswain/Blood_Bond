@@ -6,13 +6,6 @@ import 'package:blood_bond/screen/Ai.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  List symptoms = [
-    "Temperature",
-    "Snuffle",
-    "Fever",
-    "Cough",
-    "Cold",
-  ];
   List DoctorImg = [
     "doctor1.jpg",
     "doctor2.jpg",
@@ -296,51 +289,6 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 25),
-            Padding(
-              padding: EdgeInsets.only(left: 15),
-              child: Text(
-                "What Are your Symptoms?",
-                style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.black),
-              ),
-            ),
-            SizedBox(
-              height: 50,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: symptoms.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                    padding: EdgeInsets.symmetric(horizontal: 25),
-                    decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black38,
-                            blurRadius: 7,
-                            spreadRadius: 5,
-                          )
-                        ]),
-                    child: Center(
-                      child: Text(
-                        symptoms[index],
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black87,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            SizedBox(height: 15),
             Padding(
               padding: EdgeInsets.only(left: 15),
               child: Text(

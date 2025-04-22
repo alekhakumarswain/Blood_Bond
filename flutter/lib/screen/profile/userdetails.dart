@@ -57,27 +57,32 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Padding(
-        padding: EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[600],
+      child: IntrinsicHeight(
+        child: Padding(
+          padding: EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey[600],
+                ),
               ),
-            ),
-            SizedBox(height: 4),
-            Text(
-              value,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
+              SizedBox(height: 4),
+              Flexible(
+                child: Text(
+                  value.isEmpty ? "Not Provided" : value,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -90,27 +95,32 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Padding(
-        padding: EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[600],
+      child: IntrinsicHeight(
+        child: Padding(
+          padding: EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey[600],
+                ),
               ),
-            ),
-            SizedBox(height: 4),
-            Text(
-              values.isEmpty ? "None" : values.join(", "),
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
+              SizedBox(height: 4),
+              Flexible(
+                child: Text(
+                  values.isEmpty ? "None" : values.join(", "),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -211,7 +221,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
           ),
           Expanded(
             child: Text(
-              value,
+              value.isEmpty ? "Not Provided" : value,
               style: TextStyle(
                 color: Colors.grey[800],
               ),
@@ -263,8 +273,13 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
           children: [
             // Personal Information Section
             buildSectionTitle("Personal Information", Icons.person),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            GridView.count(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              childAspectRatio: 2.2, // Adjusted from 3
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
               children: [
                 buildInfoCard("Name", personalInfo['name'] ?? ''),
                 buildInfoCard("Blood Type", personalInfo['bloodType'] ?? ''),
@@ -279,8 +294,13 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
 
             // Health Metrics Section
             buildSectionTitle("Health Metrics", Icons.monitor_heart),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            GridView.count(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              childAspectRatio: 2.2, // Adjusted from 3
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
               children: [
                 buildInfoCard(
                     "Blood Pressure", healthMetrics['bloodPressure'] ?? ''),
@@ -301,20 +321,170 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
             ),
 
             // Medical History Section
+            // Medical History Section
             buildSectionTitle("Medical History", Icons.medical_services),
-            buildListInfoCard("Chronic Conditions",
-                medicalHistory['chronicConditions'] ?? []),
-            buildListInfoCard(
-                "Family History", medicalHistory['familyHistory'] ?? []),
-            buildInfoCard(
-                "Surgeries", medicalHistory['surgeries']?.toString() ?? 'No'),
-            buildInfoCard("Allergies",
-                medicalHistory['otherAllergies']?.toString() ?? 'None'),
+            GridView.count(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              childAspectRatio: 1.8, // Adjusted for better fit
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              children: [
+                Card(
+                  elevation: 2,
+                  margin: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Chronic Conditions",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Flexible(
+                          child: Text(
+                            (medicalHistory['chronicConditions'] as List?)
+                                        ?.isEmpty ??
+                                    true
+                                ? "None"
+                                : medicalHistory['chronicConditions']
+                                    .join(", "),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 2,
+                  margin: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Family History",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Flexible(
+                          child: Text(
+                            (medicalHistory['familyHistory'] as List?)
+                                        ?.isEmpty ??
+                                    true
+                                ? "None"
+                                : medicalHistory['familyHistory'].join(", "),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 2,
+                  margin: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Surgeries",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Flexible(
+                          child: Text(
+                            medicalHistory['surgeries']?.toString() ?? 'No',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 2,
+                  margin: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Allergies",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Flexible(
+                          child: Text(
+                            medicalHistory['otherAllergies']?.toString() ??
+                                'None',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
 
             // Lifestyle Section
             buildSectionTitle("Lifestyle", Icons.fitness_center),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            GridView.count(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              childAspectRatio: 2.2, // Adjusted from 3
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
               children: [
                 buildInfoCard(
                     "Smoking", lifestyleFactors['smokingStatus'] ?? ''),
