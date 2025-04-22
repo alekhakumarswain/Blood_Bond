@@ -37,15 +37,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text("Blood Bond"),
+        centerTitle: true,
         backgroundColor:
             Color(0xFFBE179A), // Match the color with BloodTestPage
-        leading: IconButton(
-          icon: Icon(Icons.menu), // Optional: Add a menu icon or leave as null
-          onPressed: () {
-            // Add navigation or action if needed
-          },
-        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(top: 50),

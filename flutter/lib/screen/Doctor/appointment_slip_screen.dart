@@ -459,16 +459,16 @@ class AppointmentCard extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  backgroundColor: const Color.fromARGB(255, 103, 221, 240),
                   foregroundColor: Color(0xFFD32F2F),
                 ),
                 onPressed: onDownload,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Download Appointment Slip'),
+                    Text('Download Appointment Slip'), //bold it
                     SizedBox(width: 8),
-                    Icon(Icons.download, size: 16),
+                    Icon(Icons.file_download, size: 16),
                   ],
                 ),
               ),

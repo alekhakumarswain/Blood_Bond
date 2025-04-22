@@ -72,15 +72,15 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
               ),
               if (appointmentCount > 0)
                 Positioned(
-                  right: 8,
-                  top: 8,
+                  right: 5,
+                  top: 5,
                   child: CircleAvatar(
                     radius: 8,
-                    backgroundColor: Colors.orangeAccent,
+                    backgroundColor: const Color.fromARGB(255, 70, 255, 64),
                     child: Text(
                       appointmentCount.toString(),
                       style: TextStyle(
-                        color: Colors.white,
+                        color: const Color.fromARGB(255, 12, 10, 10),
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                       ),
@@ -94,11 +94,16 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(15.0),
             child: TextField(
               decoration: const InputDecoration(
                 labelText: 'Search doctors...',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                ),
+                prefixIcon: Icon(Icons.search),
+                suffixIcon: Icon(Icons.clear),
+                suffixIconConstraints: BoxConstraints(maxHeight: 20),
               ),
               onChanged: (value) {
                 searchQuery = value;
@@ -107,16 +112,26 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Row(
               children: [
                 Expanded(
                   child: DropdownButtonFormField<String>(
                     decoration: const InputDecoration(
                       labelText: 'Specialty',
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
                     ),
                     value: selectedSpecialty,
+                    dropdownColor: Colors.white,
+                    style: TextStyle(color: Colors.black),
+                    validator: (value) {
+                      if (value == null) {
+                        return 'Please select a specialty';
+                      }
+                      return null;
+                    },
                     items: <String>[
                       'Cardiology',
                       'Dermatology',
@@ -126,7 +141,8 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
                     ].map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value),
+                        child:
+                            Text(value, style: TextStyle(color: Colors.black)),
                       );
                     }).toList(),
                     onChanged: (String? newValue) {
@@ -137,7 +153,7 @@ class _DoctorListScreenState extends State<DoctorListScreen> {
                     },
                   ),
                 ),
-                const SizedBox(width: 16),
+                const SizedBox(width: 6),
                 Expanded(
                   child: Row(
                     children: [
@@ -213,11 +229,11 @@ class DoctorCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 40,
-                backgroundColor: Colors.grey.shade200,
+                backgroundColor: const Color.fromARGB(255, 236, 158, 158),
                 child: Icon(
                   defaultIcon,
                   size: 48,
-                  color: Colors.grey.shade600,
+                  color: const Color.fromARGB(255, 23, 1, 107),
                 ),
               ),
               SizedBox(height: 12),
