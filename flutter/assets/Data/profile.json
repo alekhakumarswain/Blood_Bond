@@ -1,0 +1,204 @@
+{
+    "personalInformation": {
+      "name": "Alekha Kumar Swain",
+      "dob": "2025-03-13T00:00:00.000Z",
+      "gender": "Male",
+      "bloodType": "A-",
+      "phone": "+918018226416",
+      "emergencyContact": {
+        "name": "Puja swain",
+        "phone": "+917749897273"
+      },
+      "address": "ASTARANG, Beguniabasta",
+      "occupation": "Self-employed"
+    },
+    
+    "insuranceInformation": {
+      "provider": "",
+      "policyNumber": "",
+      "insuranceFile": ""
+    },
+    
+    "bloodDonationHistory": {
+      "lastDonationDate": "2024-12-09T00:00:00.000Z",
+      "totalDonations": 1,
+      "eligibleForDonation": true
+    },
+    
+    "healthMetrics": {
+      "bloodPressure": "",
+      "weight": 80,
+      "height": 123
+    },
+    
+    "medicalHistory": {
+      "chronicConditions": ["Heart Disease"],
+      "surgeries": false,
+      "surgeryDetails": "",
+      "medicationAllergies": [],
+      "otherAllergies": "",
+      "familyHistory": ["Stroke"],
+      "otherFamilyHistory": ""
+    },
+    
+    "medications": {
+      "currentMeds": false,
+      "medsList": [],
+      "pastMeds": "",
+      "ongoingTherapies": [],
+      "ongoingTherapiesOthers": ""
+    },
+    
+    "medicalReports": {
+      "bloodReport": "",
+      "imagingReport": "",
+      "geneticOrBiopsyTest": false
+    },
+    
+    "vaccinationHistory": {
+      "polioVaccine": true,
+      "tetanusShot": null,
+      "covidVaccine": "",
+      "covidBooster": false
+    },
+    
+    "lifestyleFactors": {
+      "smokingStatus": "Never",
+      "cigarettesPerDay": 0,
+      "exerciseFrequency": "Rarely",
+      "sleepHours": 3,
+      "dietType": ["Vegetarian"],
+      "dietTypeOther": "",
+      "alcoholConsumption": "Never",
+      "alcoholFrequency": ""
+    },
+    
+    "currentHealthStatus": {
+      "primarySymptoms": "",
+      "initialDiagnosis": "",
+      "followUpRequired": false,
+      "followUpDate": null
+    },
+    
+    "bloodDonationRequests": {
+      "donationHistory": [],
+      "receiveRequests": []
+    },
+    
+    "medicinePurchases": [
+      {
+        "medicineId": "med001",
+        "name": "Paracetamol 500mg",
+        "price": 50,
+        "dosage": "1 tablet every 6 hours",
+        "category": "pain-relief",
+        "quantity": 2,
+        "store": {
+          "storeId": "ssms001",
+          "storeName": "Apollo Pharmacy",
+          "address": "Apollo Pharmacy, Damana Square, Bhubaneswar, Odisha, India"
+        },
+        "purchaseDate": "2025-03-15",
+        "nextRefillDate": "2025-04-15"
+      },
+      {
+        "medicineId": "med003",
+        "name": "Metformin 500mg",
+        "price": 200,
+        "dosage": "1 tablet daily",
+        "category": "diabetes",
+        "quantity": 1,
+        "store": {
+          "storeId": "ssms002",
+          "storeName": "Acharya Drug House",
+          "address": "Acharya Drug House, Damana Square, Bhubaneswar, Odisha, India"
+        },
+        "purchaseDate": "2025-03-10",
+        "nextRefillDate": "2025-04-10"
+      }
+    ],
+    
+    "appointments": [
+      {
+        "bookingId": "APT123456",
+        "doctorName": "Dr. R K Sharma",
+        "specialty": "Cardiologist",
+        "hospitalName": "Apollo Hospital",
+        "appointmentDate": "2025-04-10",
+        "appointmentTime": "10:00 AM",
+        "appointmentType": "In-person",
+        "address": "Bhubaneswar, Odisha",
+        "status": "Completed",
+        "notes": "Follow up for heart condition"
+      },
+      {
+        "bookingId": "APT789012",
+        "doctorName": "Dr. P K Mishra",
+        "specialty": "Dermatologist",
+        "hospitalName": "KIMS Hospital",
+        "appointmentDate": "2025-04-25",
+        "appointmentTime": "2:00 PM",
+        "appointmentType": "Virtual",
+        "virtualMeetingUrl": "https://meet.example.com/xyz123",
+        "status": "Upcoming"
+      }
+    ],
+    
+    "bloodTests": [
+      {
+        "bookingId": "BTEST20250415",
+        "testType": "Complete Blood Count (CBC)",
+        "testDate": "2025-04-15",
+        "testTime": "09:30 AM",
+        "pathologyLab": {
+          "labId": "plab001",
+          "labName": "Dr Lal PathLabs Franchise",
+          "address": "Dr Lal PathLabs Franchise, Damana Square, Bhubaneswar, Odisha, India",
+          "contact": "9337255980",
+          "rating": 4.7,
+          "isNABLCertified": true,
+          "offersHomeCollection": true
+        },
+        "price": 299,
+        "status": "Scheduled",
+        "preparationInstructions": "Fasting required for 8 hours before test",
+        "resultsAvailable": false,
+        "resultsDate": null,
+        "results": null
+      },
+      {
+        "bookingId": "BTEST20250320",
+        "testType": "Lipid Profile",
+        "testDate": "2025-03-20",
+        "testTime": "11:00 AM",
+        "pathologyLab": {
+          "labId": "plab022",
+          "labName": "GENPATH DIAGNOSTICS. Metropolis Lab",
+          "address": "GENPATH DIAGNOSTICS. Metropolis Lab, Patia Square, Bhubaneswar, Odisha, India",
+          "contact": "9439389355",
+          "rating": 4.8,
+          "isNABLCertified": true,
+          "offersHomeCollection": true
+        },
+        "price": 599,
+        "status": "Completed",
+        "preparationInstructions": "Fasting required for 12 hours before test",
+        "resultsAvailable": true,
+        "resultsDate": "2025-03-21",
+        "results": {
+          "totalCholesterol": "180 mg/dL",
+          "hdlCholesterol": "60 mg/dL",
+          "ldlCholesterol": "100 mg/dL",
+          "triglycerides": "120 mg/dL",
+          "status": "Normal",
+          "doctorComments": "Results within normal range. Maintain current lifestyle."
+        }
+      }
+    ],
+    
+    "systemMetadata": {
+      "createdAt": "2025-03-08T22:27:24.690Z",
+      "updatedAt": "2025-04-01T15:30:45.120Z",
+      "version": 2
+    }
+  }

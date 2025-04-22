@@ -38,7 +38,7 @@ class _NavScreenState extends State<NavScreen> {
               },
               type: BottomNavigationBarType.fixed,
               selectedItemColor: Color(0xff7165d6),
-              unselectedItemColor: Colors.grey,
+              unselectedItemColor: Color(0xff7165d6),
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.bloodtype),
@@ -49,7 +49,30 @@ class _NavScreenState extends State<NavScreen> {
                   label: "Test",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.assistant),
+                  icon: Container(
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: _selectedIndex != 3
+                          ? const Color.fromARGB(255, 224, 53, 230)
+                          : Colors.transparent,
+                      boxShadow: _selectedIndex == 3
+                          ? [
+                              BoxShadow(
+                                color: const Color.fromARGB(255, 54, 120, 244)
+                                    .withOpacity(0.6),
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                                offset: Offset(0, 3),
+                              ),
+                            ]
+                          : [],
+                    ),
+                    child: Icon(
+                      Icons.assistant,
+                      color: _selectedIndex != 3 ? Colors.white : Colors.grey,
+                    ),
+                  ),
                   label: "SuuSri",
                 ),
                 BottomNavigationBarItem(

@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
             Color(0xFFBE179A), // Match the color with BloodTestPage
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 50),
+        padding: EdgeInsets.only(top: 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -486,7 +486,7 @@ class HomeScreen extends StatelessWidget {
             SectionCard(
               icon: Icons.psychology,
               iconColor: Colors.brown,
-              backgroundColor: Colors.brown.shade300,
+              backgroundColor: const Color.fromARGB(255, 235, 133, 31),
               title: "Mental Health",
               subtitle: "Access Mental Health Support",
               onTap: () {
@@ -498,7 +498,7 @@ class HomeScreen extends StatelessWidget {
             SectionCard(
               icon: Icons.person,
               iconColor: Colors.teal,
-              backgroundColor: Colors.tealAccent,
+              backgroundColor: const Color.fromARGB(255, 98, 127, 242),
               title: "Profile",
               subtitle: "View and Edit Profile",
               onTap: () {
@@ -507,17 +507,6 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             SizedBox(height: 20),
-            SectionCard(
-              icon: Icons.settings,
-              iconColor: Colors.grey,
-              backgroundColor: Colors.blueGrey,
-              title: "Settings",
-              subtitle: "App Settings",
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen()));
-              },
-            ),
           ],
         ),
       ),
