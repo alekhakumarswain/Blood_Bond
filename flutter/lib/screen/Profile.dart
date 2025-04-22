@@ -88,14 +88,14 @@ class ProfileScreen extends StatelessWidget {
 
                   // New card to navigate to User Details screen
                   ProfileInfoCard(
-                    icon: Icons.info,
+                    icon: Icons.person_outline,
                     title: "View Full Details",
                     subtitle: "Tap to see all user details",
                     onEdit: () {
-                      Navigator.push(
-                        context,
+                      Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (context) => UserDetailsScreen()),
+                          builder: (context) => UserDetailsScreen(),
+                        ),
                       );
                     },
                   ),
@@ -231,21 +231,9 @@ class ProfileInfoCard extends StatelessWidget {
               ],
             ),
           ),
-          // Replace edit icon with arrow icon and add swipe gesture
-          GestureDetector(
-            onHorizontalDragEnd: (details) {
-              if (details.primaryVelocity != null &&
-                  details.primaryVelocity! < 0) {
-                // Left swipe detected
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Left swipe to check')),
-                );
-              }
-            },
-            child: IconButton(
-              icon: Icon(Icons.arrow_forward_ios, color: Colors.grey),
-              onPressed: onEdit,
-            ),
+          IconButton(
+            icon: Icon(Icons.edit, color: Colors.grey),
+            onPressed: onEdit,
           ),
         ],
       ),
