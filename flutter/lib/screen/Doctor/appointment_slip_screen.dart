@@ -1,66 +1,132 @@
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:blood_bond/screen/Doctor/appointment_model.dart';
+import 'package:blood_bond/models/appointment_model.dart';
 import 'package:provider/provider.dart';
 import 'package:blood_bond/providers/appointment_provider.dart';
+import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class AppointmentSlipScreen extends StatelessWidget {
   const AppointmentSlipScreen({Key? key}) : super(key: key);
+
+  Future<Uint8List> _loadLogo() async {
+    final data = await rootBundle.load('assets/images/bloodbond-logo.png');
+    return data.buffer.asUint8List();
+  }
 
   Future<void> _generatePdf(
       BuildContext context, Appointment appointment) async {
     final pdf = pw.Document();
 
+    final logoImage = pw.MemoryImage(await _loadLogo());
+
     final qrCodeData =
-        'Booking ID: ${appointment.bookingId}\\nPatient: ${appointment.patientName}\\nDoctor: ${appointment.doctorName}';
+        'Booking ID: ${appointment.bookingId}\nPatient: ${appointment.patientName}\nDoctor: ${appointment.doctorName}';
+    final barcodeData = appointment.bookingId;
+
+    final currentDate = DateTime.now();
+    final formattedDate =
+        "${currentDate.month}/${currentDate.day}/${currentDate.year}";
 
     pdf.addPage(
       pw.Page(
+        pageFormat: PdfPageFormat.a4,
+        margin: pw.EdgeInsets.all(24),
         build: (pw.Context context) {
-          return pw.Row(
+          return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
             children: [
-              pw.Expanded(
-                flex: 3,
-                child: pw.Container(
-                  padding: pw.EdgeInsets.all(20),
-                  child: pw.Column(
-                    crossAxisAlignment: pw.CrossAxisAlignment.start,
-                    children: [
-                      pw.Text('Appointment Slip',
-                          style: pw.TextStyle(
-                              fontSize: 24, fontWeight: pw.FontWeight.bold)),
-                      pw.SizedBox(height: 20),
-                      pw.Text('Patient: ${appointment.patientName}'),
-                      pw.Text('Doctor: ${appointment.doctorName}'),
-                      pw.Text('Specialty: ${appointment.specialty}'),
-                      pw.Text('Hospital: ${appointment.hospitalName}'),
-                      pw.Text('Date: ${appointment.appointmentDate}'),
-                      pw.Text('Time: ${appointment.appointmentTime}'),
-                      pw.Text('Type: ${appointment.appointmentType}'),
-                      pw.SizedBox(height: 20),
-                      pw.Text('Booking ID: ${appointment.bookingId}'),
-                      pw.Text('Patient ID: ${appointment.patientId}'),
-                      pw.Text('Email: ${appointment.email}'),
-                      pw.Text('Address: ${appointment.address}'),
-                      pw.Text('Latitude: ${appointment.latitude}'),
-                      pw.Text('Longitude: ${appointment.longitude}'),
-                    ],
-                  ),
-                ),
+              pw.Row(
+                crossAxisAlignment: pw.CrossAxisAlignment.center,
+                children: [
+                  pw.Image(logoImage, width: 60, height: 60),
+                  pw.SizedBox(width: 12),
+                  pw.Text('Blood Bond',
+                      style: pw.TextStyle(
+                          fontSize: 28, fontWeight: pw.FontWeight.bold)),
+                ],
               ),
-              pw.Expanded(
-                flex: 1,
-                child: pw.Container(
-                  padding: pw.EdgeInsets.all(20),
-                  child: pw.BarcodeWidget(
+              pw.SizedBox(height: 16),
+              pw.Text('Swasthya Setu',
+                  style: pw.TextStyle(
+                      fontSize: 20, fontWeight: pw.FontWeight.bold)),
+              pw.SizedBox(height: 12),
+              pw.Text('Patient Name: ${appointment.patientName}',
+                  style: pw.TextStyle(fontSize: 16)),
+              pw.SizedBox(height: 12),
+              pw.Text('Booking ID: ${appointment.bookingId}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.Text('Patient ID: ${appointment.patientId}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.Text('Email: ${appointment.email}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.SizedBox(height: 12),
+              pw.Text('Date of Issue: $formattedDate',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.SizedBox(height: 20),
+              pw.Text('Scan to view meeting link',
+                  style: pw.TextStyle(
+                      fontSize: 14, fontStyle: pw.FontStyle.italic)),
+              pw.SizedBox(height: 20),
+              pw.Text('Doctor Appointment Slip',
+                  style: pw.TextStyle(
+                      fontSize: 18, fontWeight: pw.FontWeight.bold)),
+              pw.SizedBox(height: 12),
+              pw.Text('Doctor: ${appointment.doctorName}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.Text('Specialty: ${appointment.specialty}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.Text('Hospital: ${appointment.hospitalName}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.Text('Appointment Date: ${appointment.appointmentDate}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.Text('Appointment Time: ${appointment.appointmentTime}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.Text('Appointment Type: ${appointment.appointmentType}',
+                  style: pw.TextStyle(fontSize: 14)),
+              pw.SizedBox(height: 12),
+              pw.Text('Virtual Meeting URL:',
+                  style: pw.TextStyle(
+                      fontSize: 14, fontWeight: pw.FontWeight.bold)),
+              pw.Text(appointment.virtualMeetingUrl ?? 'N/A',
+                  style: pw.TextStyle(fontSize: 14, color: PdfColors.blue)),
+              pw.SizedBox(height: 12),
+              pw.Text('Instructions:',
+                  style: pw.TextStyle(
+                      fontSize: 14, fontWeight: pw.FontWeight.bold)),
+              pw.Text(
+                'Please arrive 15 minutes early with this slip and any relevant medical records. '
+                'For cancellation or rescheduling, contact the hospital at least 24 hours prior. '
+                'For virtual appointment, join using the provided link at the scheduled time.',
+                style: pw.TextStyle(fontSize: 12),
+              ),
+              pw.SizedBox(height: 20),
+              pw.Text('Booking ID: ${appointment.bookingId}',
+                  style: pw.TextStyle(fontSize: 12)),
+              pw.SizedBox(height: 12),
+              pw.Text(
+                  'Generated by Blood Bond on $formattedDate | Confidential Appointment Slip',
+                  style: pw.TextStyle(
+                      fontSize: 10, fontStyle: pw.FontStyle.italic)),
+              pw.SizedBox(height: 20),
+              pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.BarcodeWidget(
                     barcode: pw.Barcode.qrCode(),
                     data: qrCodeData,
                     width: 100,
                     height: 100,
                   ),
-                ),
+                  pw.BarcodeWidget(
+                    barcode: pw.Barcode.code128(),
+                    data: barcodeData,
+                    width: 200,
+                    height: 80,
+                  ),
+                ],
               ),
             ],
           );

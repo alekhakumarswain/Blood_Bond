@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:blood_bond/models/doctor.dart';
-import 'package:blood_bond/screen/Doctor/appointment_model.dart';
+import 'package:blood_bond/models/appointment_model.dart';
 import 'package:provider/provider.dart';
 import 'package:blood_bond/providers/appointment_provider.dart';
 

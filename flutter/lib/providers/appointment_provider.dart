@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:blood_bond/screen/Doctor/appointment_model.dart';
+import 'package:blood_bond/models/appointment_model.dart';
 
 class AppointmentProvider with ChangeNotifier {
   List<Appointment> _appointments = [];

@@ -99,7 +99,7 @@ flutter:
     - assets/images/
     - assets/Data/
     - assets/Data/medicine_store_list.json
-    - assets/data/doctors.json
+    - assets/Data/doctors.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
