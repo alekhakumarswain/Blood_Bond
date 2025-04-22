@@ -57,10 +57,12 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
+                      color: Colors.black87,
                     ),
                   ),
                   CircleAvatar(
-                    radius: 50,
+                    radius: 60,
+                    backgroundColor: const Color.fromARGB(255, 151, 210, 250),
                     backgroundImage: AssetImage("assets/images/user1.png"),
                   ),
                 ],
@@ -80,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                        color: Color(0xFFBE179A),
+                        color: Color.fromARGB(255, 39, 122, 247),
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -247,7 +249,7 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(17),
                     decoration: BoxDecoration(
-                        color: Color(0xFFBE179A),
+                        color: Color.fromARGB(255, 39, 122, 247),
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -299,10 +301,9 @@ class HomeScreen extends StatelessWidget {
               child: Text(
                 "What Are your Symptoms?",
                 style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.black26,
-                ),
+                    fontSize: 22,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.black),
               ),
             ),
             SizedBox(
@@ -365,13 +366,13 @@ class HomeScreen extends StatelessWidget {
                     margin: EdgeInsets.all(10),
                     padding: EdgeInsets.symmetric(vertical: 15),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: const Color.fromARGB(255, 21, 125, 230),
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black26,
+                          color: const Color.fromARGB(66, 8, 161, 167),
                           blurRadius: 5,
-                          spreadRadius: 3,
+                          spreadRadius: 8,
                         ),
                       ],
                     ),
@@ -387,8 +388,8 @@ class HomeScreen extends StatelessWidget {
                           "${DoctorName[index]}",
                           style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.black87,
+                            fontWeight: FontWeight.w600,
+                            color: const Color.fromARGB(221, 186, 201, 17),
                           ),
                         ),
                         Text(
@@ -409,7 +410,8 @@ class HomeScreen extends StatelessWidget {
                             Text(
                               "${DoctorRating[index]}",
                               style: TextStyle(
-                                color: Colors.black45,
+                                color: const Color.fromARGB(115, 225, 240, 195),
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],

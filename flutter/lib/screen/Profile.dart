@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './profile/userdetails.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -26,8 +27,9 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage("images/user1.png"),
+                    radius: 60,
+                    backgroundColor: const Color.fromARGB(255, 99, 203, 222),
+                    backgroundImage: AssetImage("assets/images/user1.png"),
                   ),
                 ],
               ),
@@ -82,6 +84,22 @@ class ProfileScreen extends StatelessWidget {
                       // Navigate to edit screen or show dialog
                     },
                   ),
+                  SizedBox(height: 20),
+
+                  // New card to navigate to User Details screen
+                  ProfileInfoCard(
+                    icon: Icons.info,
+                    title: "View Full Details",
+                    subtitle: "Tap to see all user details",
+                    onEdit: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UserDetailsScreen()),
+                      );
+                    },
+                  ),
+
                   SizedBox(height: 20),
                   Text(
                     "Account Settings",
@@ -213,9 +231,21 @@ class ProfileInfoCard extends StatelessWidget {
               ],
             ),
           ),
-          IconButton(
-            icon: Icon(Icons.edit, color: Colors.grey),
-            onPressed: onEdit,
+          // Replace edit icon with arrow icon and add swipe gesture
+          GestureDetector(
+            onHorizontalDragEnd: (details) {
+              if (details.primaryVelocity != null &&
+                  details.primaryVelocity! < 0) {
+                // Left swipe detected
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Left swipe to check')),
+                );
+              }
+            },
+            child: IconButton(
+              icon: Icon(Icons.arrow_forward_ios, color: Colors.grey),
+              onPressed: onEdit,
+            ),
           ),
         ],
       ),
