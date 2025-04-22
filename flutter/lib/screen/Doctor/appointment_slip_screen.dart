@@ -7,12 +7,10 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:qr_flutter/qr_flutter.dart';
 
-class AppointmentSlipScreen extends StatelessWidget {
-  const AppointmentSlipScreen({Key? key}) : super(key: key);
-
-  String _jsonData(Appointment appointment) {
-    return '''
+String jsonData(Appointment appointment) {
+  return '''
 {
   "patientName": "${appointment.patientName}",
   "bookingId": "${appointment.bookingId}",
@@ -21,10 +19,17 @@ class AppointmentSlipScreen extends StatelessWidget {
   "dateOfIssue": "${DateTime.now().month}/${DateTime.now().day}/${DateTime.now().year}",
   "appointmentTime": "${appointment.appointmentTime}",
   "appointmentType": "${appointment.appointmentType}",
-  "virtualMeetingUrl": "https://alekhakumarswain.github.io/OnlineAppointment-/#bhfhvy"
+  "doctorId": "${appointment.doctorId}",
+  "hospitalAddress": "${appointment.address}",
+  "latitude": "${appointment.latitude}",
+  "longitude": "${appointment.longitude}",
+  "virtualMeetingUrl": "${appointment.virtualMeetingUrl ?? ''}"
 }
 ''';
-  }
+}
+
+class AppointmentSlipScreen extends StatelessWidget {
+  const AppointmentSlipScreen({Key? key}) : super(key: key);
 
   Future<Uint8List> _loadLogo() async {
     final data = await rootBundle.load('assets/images/icon.png');
@@ -36,7 +41,7 @@ class AppointmentSlipScreen extends StatelessWidget {
     final pdf = pw.Document();
 
     final logoImage = pw.MemoryImage(await _loadLogo());
-    final qrCodeData = _jsonData(appointment);
+    final qrCodeData = jsonData(appointment);
     final barcodeData = appointment.bookingId;
 
     final currentDate = DateTime.now();
@@ -50,15 +55,14 @@ class AppointmentSlipScreen extends StatelessWidget {
         build: (pw.Context context) {
           return pw.Stack(
             children: [
-              // Ocean background simulation with gradient
               pw.Positioned.fill(
                 child: pw.Container(
                   decoration: pw.BoxDecoration(
                     gradient: pw.LinearGradient(
                       colors: [
-                        PdfColor.fromInt(0xFF0077BE), // Ocean blue
-                        PdfColor.fromInt(0xFFB2D8D8), // Light blue
-                        PdfColor.fromInt(0xFFFAD6A5), // Golden sunlight
+                        PdfColor.fromInt(0xFF0077BE),
+                        PdfColor.fromInt(0xFFB2D8D8),
+                        PdfColor.fromInt(0xFFFAD6A5),
                       ],
                       begin: pw.Alignment.topLeft,
                       end: pw.Alignment.bottomRight,
@@ -69,7 +73,6 @@ class AppointmentSlipScreen extends StatelessWidget {
               pw.Column(
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
-                  // Centered Top Section with circular logo and title
                   pw.Center(
                     child: pw.Column(
                       children: [
@@ -102,11 +105,9 @@ class AppointmentSlipScreen extends StatelessWidget {
                     ),
                   ),
                   pw.SizedBox(height: 24),
-                  // Patient Information and QR code section
                   pw.Row(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      // Patient info left side
                       pw.Expanded(
                         flex: 2,
                         child: pw.Column(
@@ -129,7 +130,24 @@ class AppointmentSlipScreen extends StatelessWidget {
                               style: pw.TextStyle(fontSize: 14),
                             ),
                             pw.Text(
+                              'Doctor ID: ${appointment.doctorId}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.Text(
                               'Email: ${appointment.email}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.SizedBox(height: 12),
+                            pw.Text(
+                              'Hospital Address: ${appointment.address}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.Text(
+                              'Latitude: ${appointment.latitude}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.Text(
+                              'Longitude: ${appointment.longitude}',
                               style: pw.TextStyle(fontSize: 14),
                             ),
                             pw.SizedBox(height: 12),
@@ -141,7 +159,6 @@ class AppointmentSlipScreen extends StatelessWidget {
                         ),
                       ),
                       pw.SizedBox(width: 24),
-                      // QR code right side
                       pw.Expanded(
                         flex: 1,
                         child: pw.Column(
@@ -167,13 +184,11 @@ class AppointmentSlipScreen extends StatelessWidget {
                     ],
                   ),
                   pw.SizedBox(height: 20),
-                  // Green divider line
                   pw.Container(
                     height: 1,
                     color: PdfColors.green800,
                     margin: pw.EdgeInsets.symmetric(vertical: 20),
                   ),
-                  // Appointment Slip Title
                   pw.Center(
                     child: pw.Text(
                       'DOCTOR APPOINTMENT SLIP',
@@ -185,7 +200,6 @@ class AppointmentSlipScreen extends StatelessWidget {
                     ),
                   ),
                   pw.SizedBox(height: 20),
-                  // Appointment Details and second QR code
                   pw.Row(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
@@ -208,7 +222,23 @@ class AppointmentSlipScreen extends StatelessWidget {
                               style: pw.TextStyle(fontSize: 14),
                             ),
                             pw.Text(
+                              'Doctor ID: ${appointment.doctorId}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.Text(
                               'Email: ${appointment.email}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.Text(
+                              'Hospital Address: ${appointment.address}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.Text(
+                              'Latitude: ${appointment.latitude}',
+                              style: pw.TextStyle(fontSize: 14),
+                            ),
+                            pw.Text(
+                              'Longitude: ${appointment.longitude}',
                               style: pw.TextStyle(fontSize: 14),
                             ),
                             pw.Text(
@@ -252,7 +282,6 @@ class AppointmentSlipScreen extends StatelessWidget {
                     ],
                   ),
                   pw.SizedBox(height: 20),
-                  // Instructions box with green border
                   pw.Container(
                     padding: pw.EdgeInsets.all(8),
                     decoration: pw.BoxDecoration(
@@ -264,7 +293,6 @@ class AppointmentSlipScreen extends StatelessWidget {
                     ),
                   ),
                   pw.SizedBox(height: 20),
-                  // Barcode and footer
                   pw.Center(
                     child: pw.Column(
                       children: [
@@ -370,27 +398,80 @@ class AppointmentCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Patient: ${appointment.patientName}', style: textStyle),
-            SizedBox(height: 4),
-            Text('Doctor: ${appointment.doctorName}', style: textStyle),
-            SizedBox(height: 4),
-            Text('Specialty: ${appointment.specialty}', style: textStyle),
-            SizedBox(height: 4),
-            Text('Hospital: ${appointment.hospitalName}', style: textStyle),
-            SizedBox(height: 4),
-            Text('Date: ${appointment.appointmentDate}', style: textStyle),
-            SizedBox(height: 4),
-            Text('Time: ${appointment.appointmentTime}', style: textStyle),
-            SizedBox(height: 4),
-            Text('Type: ${appointment.appointmentType}', style: textStyle),
-            SizedBox(height: 8),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                foregroundColor: Color(0xFFD32F2F),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Content on the left
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Patient: ${appointment.patientName}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Doctor: ${appointment.doctorName}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Specialty: ${appointment.specialty}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Hospital: ${appointment.hospitalName}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Date: ${appointment.appointmentDate}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Time: ${appointment.appointmentTime}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Type: ${appointment.appointmentType}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Doctor ID: ${appointment.doctorId}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Hospital Address: ${appointment.address}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Latitude: ${appointment.latitude}',
+                          style: textStyle),
+                      SizedBox(height: 4),
+                      Text('Longitude: ${appointment.longitude}',
+                          style: textStyle),
+                    ],
+                  ),
+                ),
+                // QR code on the right
+                Expanded(
+                  flex: 2,
+                  child: Center(
+                    child: QrImageView(
+                      data: jsonData(appointment),
+                      size: 150.0,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            // Download button below
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  foregroundColor: Color(0xFFD32F2F),
+                ),
+                onPressed: onDownload,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Download Appointment Slip'),
+                    SizedBox(width: 8),
+                    Icon(Icons.download, size: 16),
+                  ],
+                ),
               ),
-              onPressed: onDownload,
-              child: const Text('Download Appointment Slip'),
             ),
           ],
         ),

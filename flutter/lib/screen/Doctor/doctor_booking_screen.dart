@@ -224,9 +224,14 @@ class _DoctorBookingScreenState extends State<DoctorBookingScreen> {
                       bookingId: 'DOC${DateTime.now().millisecondsSinceEpoch}',
                       patientId: 'PAT${DateTime.now().millisecondsSinceEpoch}',
                       email: email,
-                      address: address,
-                      latitude: latitude,
-                      longitude: longitude,
+                      address: widget.doctor.address,
+                      latitude: widget.doctor.lat.toString(),
+                      longitude: widget.doctor.lng.toString(),
+                      doctorId: widget.doctor.id != null
+                          ? widget.doctor.id.toString()
+                          : null,
+                      virtualMeetingUrl:
+                          'https://alekhakumarswain.github.io/OnlineAppointment-/#bhfhvy',
                     );
                     Provider.of<AppointmentProvider>(context, listen: false)
                         .addAppointment(appointment);

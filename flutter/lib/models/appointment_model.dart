@@ -1,34 +1,36 @@
 class Appointment {
   final String patientName;
-  final String doctorName;
-  final String specialty;
-  final String hospitalName;
-  final String appointmentDate;
-  final String appointmentTime;
-  final String appointmentType;
   final String bookingId;
   final String patientId;
   final String email;
+  final String appointmentTime;
+  final String appointmentType;
+  final String? doctorId;
   final String address;
   final String latitude;
   final String longitude;
   final String? virtualMeetingUrl;
+  final String doctorName;
+  final String specialty;
+  final String hospitalName;
+  final String appointmentDate;
 
   Appointment({
     required this.patientName,
-    required this.doctorName,
-    required this.specialty,
-    required this.hospitalName,
-    required this.appointmentDate,
-    required this.appointmentTime,
-    required this.appointmentType,
     required this.bookingId,
     required this.patientId,
     required this.email,
+    required this.appointmentTime,
+    required this.appointmentType,
+    this.doctorId,
     required this.address,
     required this.latitude,
     required this.longitude,
     this.virtualMeetingUrl,
+    required this.doctorName,
+    required this.specialty,
+    required this.hospitalName,
+    required this.appointmentDate,
   });
 
   factory Appointment.fromJson(Map<String, dynamic> json) {
@@ -46,6 +48,7 @@ class Appointment {
       address: json['address'] as String,
       latitude: json['latitude'] as String,
       longitude: json['longitude'] as String,
+      doctorId: json['doctorId'] != null ? json['doctorId'].toString() : null,
       virtualMeetingUrl: json['virtualMeetingUrl'] as String?,
     );
   }
@@ -65,6 +68,7 @@ class Appointment {
       'address': address,
       'latitude': latitude,
       'longitude': longitude,
+      'doctorId': doctorId,
       'virtualMeetingUrl': virtualMeetingUrl,
     };
   }
