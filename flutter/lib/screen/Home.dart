@@ -4,7 +4,7 @@ import 'package:blood_bond/screen/BloodTestPage.dart';
 import 'package:blood_bond/screen/BloodDonateReceivePage.dart';
 import 'package:blood_bond/screen/Ai.dart';
 import 'package:flutter/material.dart';
-
+import 'package:blood_bond/screen/profile/health_records.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -428,8 +428,10 @@ class HomeScreen extends StatelessWidget {
                 title: "Health Records",
                 subtitle: "Manage Your Health Records",
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HealthRecordsScreen()));
                 },
               ),
               SizedBox(height: 20),
