@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:blood_bond/screen/profile/health_records.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:blood_bond/screen/mentalHealth.dart';
 
 class HomeScreen extends StatelessWidget {
   List DoctorImg = [
@@ -323,7 +324,7 @@ class HomeScreen extends StatelessWidget {
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.symmetric(vertical: 15),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 21, 125, 230),
+                        color: const Color.fromARGB(255, 2, 62, 48),
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -454,8 +455,10 @@ class HomeScreen extends StatelessWidget {
                 title: "Mental Health",
                 subtitle: "Access Mental Health Support",
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MentalHealthDashboard()));
                 },
               ),
               SizedBox(height: 20),

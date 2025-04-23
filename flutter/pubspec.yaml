@@ -51,6 +51,8 @@ dependencies:
   flutter_barcode_sdk: ^2.4.0
   pdf: ^3.11.3
   printing: ^5.14.2
+  percent_indicator: ^4.2.5
+  fl_chart: ^0.71.0
 
 dev_dependencies:
   flutter_test:

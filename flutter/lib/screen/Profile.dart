@@ -267,8 +267,8 @@ class SettingsCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              color: Colors.black12,
-              blurRadius: 6,
+              color: const Color.fromARGB(31, 54, 45, 45),
+              blurRadius: 16,
               spreadRadius: 4,
             ),
           ],
