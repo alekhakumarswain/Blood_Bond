@@ -19,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(context,
+                  Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => NavScreen()));
                 },
                 child: Text(
@@ -65,7 +65,7 @@ class WelcomeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) => LoginScreen()));
@@ -89,7 +89,7 @@ class WelcomeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) => SignupScreen()));

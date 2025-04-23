@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:blood_bond/widgets/Navbar.dart';
 import 'package:blood_bond/models/medicine_store.dart';
 import 'package:blood_bond/providers/cart_provider.dart';
 import 'package:blood_bond/providers/appointment_provider.dart';
 import 'package:blood_bond/screen/medicine/CartScreen.dart';
+import 'package:blood_bond/screen/welcome.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
           ),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: NavScreen(),
+        home: WelcomeScreen(),
         routes: {
           '/cart': (context) => CartScreen(),
         },
