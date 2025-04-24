@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:blood_bond/screen/MentalHealth/PlayMusic.dart';
+import 'package:blood_bond/screen/Ai.dart';
 
 class MentalHealthDashboard extends StatefulWidget {
   @override
@@ -342,7 +343,10 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                           title: 'Suusri Chat AI',
                           color: Colors.green,
                           onTap: () {
-                            // Navigate to chat
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AIScreen()));
                           },
                         ),
                       ),
@@ -375,58 +379,6 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
               ),
               SizedBox(height: 20),
 
-              // Journal Feature (New Feature)
-              Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                color: _isDarkMode ? Colors.grey[800] : Colors.white,
-                child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Daily Journal',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: _isDarkMode ? Colors.white : Colors.black,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      TextField(
-                        maxLines: 3,
-                        decoration: InputDecoration(
-                          hintText: 'Write about your day...',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          filled: true,
-                          fillColor:
-                              _isDarkMode ? Colors.grey[700] : Colors.grey[100],
-                        ),
-                        style: TextStyle(
-                          color: _isDarkMode ? Colors.white : Colors.black,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text('Save Entry'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: _getBackgroundColor(selectedMood),
-                            foregroundColor: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               SizedBox(height: 20),
 
               // Weekly Suggestions
