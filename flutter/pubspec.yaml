@@ -61,6 +61,7 @@ dependencies:
   flutter_local_notifications: ^19.1.0
   csv: ^6.0.0
   shimmer: ^3.0.0
+  just_audio: ^0.10.0
 
 dev_dependencies:
   flutter_test:

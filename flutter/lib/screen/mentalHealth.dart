@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:blood_bond/screen/MentalHealth/PlayMusic.dart';
 
 class MentalHealthDashboard extends StatefulWidget {
   @override
@@ -364,7 +365,10 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                     title: 'Mood Music',
                     color: Colors.pink,
                     onTap: () {
-                      // Navigate to music
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MusicPlayer()));
                     },
                   ),
                 ],
