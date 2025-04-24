@@ -53,6 +53,14 @@ dependencies:
   printing: ^5.14.2
   percent_indicator: ^4.2.5
   fl_chart: ^0.71.0
+  speech_to_text: ^7.0.0
+  particles_fly: ^0.0.9
+  path_provider: ^2.1.5
+  share_plus: ^11.0.0
+  google_fonts: ^6.2.1
+  flutter_local_notifications: ^19.1.0
+  csv: ^6.0.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

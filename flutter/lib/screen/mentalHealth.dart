@@ -8,9 +8,8 @@ class MentalHealthDashboard extends StatefulWidget {
 }
 
 class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
-  double _moodValue = 3.0; // Default neutral mood
-  List<String> moodIcons = ['😢', '😠', '😐', '😊', '😴'];
   String selectedMood = '😐';
+  List<String> moodIcons = ['😢', '😠', '😐', '😊', '😴'];
   String quoteOfTheDay = "You are stronger than you think";
   double wellnessScore = 72.0;
   List<FlSpot> moodData = [
@@ -22,10 +21,12 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
     FlSpot(5, 4),
     FlSpot(6, 5)
   ];
+  int _streakDays = 5; // New feature: tracking streak
+  bool _isDarkMode = false; // New feature: dark mode toggle
 
   @override
   Widget build(BuildContext context) {
-    Color backgroundColor = _getBackgroundColor(_moodValue);
+    Color backgroundColor = _getBackgroundColor(selectedMood);
 
     return Scaffold(
       body: AnimatedContainer(
@@ -35,8 +36,8 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              backgroundColor.withOpacity(0.8),
-              backgroundColor.withOpacity(0.4),
+              backgroundColor.withOpacity(_isDarkMode ? 0.6 : 0.8),
+              backgroundColor.withOpacity(_isDarkMode ? 0.2 : 0.4),
             ],
           ),
         ),
@@ -46,13 +47,29 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 40),
-              Text(
-                'Your Mental Wellness',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Your Mental Wellness',
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: _isDarkMode ? Colors.white : Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      _isDarkMode ? Icons.light_mode : Icons.dark_mode,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _isDarkMode = !_isDarkMode;
+                      });
+                    },
+                  ),
+                ],
               ),
               SizedBox(height: 8),
               Text(
@@ -60,17 +77,18 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                 style: TextStyle(
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
-                  color: Colors.white70,
+                  color: _isDarkMode ? Colors.white70 : Colors.white70,
                 ),
               ),
               SizedBox(height: 30),
 
-              // Mood Slider
+              // Mood Selection
               Card(
                 elevation: 5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
+                color: _isDarkMode ? Colors.grey[800] : Colors.white,
                 child: Padding(
                   padding: EdgeInsets.all(16),
                   child: Column(
@@ -80,29 +98,36 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
+                          color: _isDarkMode ? Colors.white : Colors.black,
                         ),
                       ),
                       SizedBox(height: 20),
-                      Slider(
-                        value: _moodValue,
-                        min: 1,
-                        max: 5,
-                        divisions: 4,
-                        label: moodIcons[_moodValue.round() - 1],
-                        onChanged: (value) {
-                          setState(() {
-                            _moodValue = value;
-                            selectedMood = moodIcons[_moodValue.round() - 1];
-                          });
-                        },
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      Wrap(
+                        spacing: 10,
                         children: moodIcons.map((icon) {
-                          return Text(
-                            icon,
-                            style: TextStyle(fontSize: 24),
+                          bool isSelected = icon == selectedMood;
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedMood = icon;
+                              });
+                            },
+                            child: AnimatedContainer(
+                              duration: Duration(milliseconds: 300),
+                              padding: EdgeInsets.all(isSelected ? 12 : 8),
+                              decoration: BoxDecoration(
+                                color: isSelected
+                                    ? _getBackgroundColor(icon).withOpacity(0.3)
+                                    : Colors.transparent,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Text(
+                                icon,
+                                style: TextStyle(
+                                  fontSize: isSelected ? 36 : 24,
+                                ),
+                              ),
+                            ),
                           );
                         }).toList(),
                       ),
@@ -118,6 +143,7 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
+                color: _isDarkMode ? Colors.grey[800] : Colors.white,
                 child: Padding(
                   padding: EdgeInsets.all(16),
                   child: Column(
@@ -128,6 +154,7 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
+                          color: _isDarkMode ? Colors.white : Colors.black,
                         ),
                       ),
                       SizedBox(height: 20),
@@ -141,10 +168,13 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
+                              color: _isDarkMode ? Colors.white : Colors.black,
                             ),
                           ),
                           progressColor: _getWellnessColor(wellnessScore),
-                          backgroundColor: const Color.fromARGB(255, 94, 92, 5),
+                          backgroundColor: _isDarkMode
+                              ? const Color.fromARGB(255, 234, 125, 125)!
+                              : const Color.fromARGB(255, 203, 59, 59)!,
                           circularStrokeCap: CircularStrokeCap.round,
                         ),
                       ),
@@ -154,7 +184,9 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                           _getWellnessMessage(wellnessScore),
                           style: TextStyle(
                             fontSize: 16,
-                            color: Colors.grey[600],
+                            color: _isDarkMode
+                                ? Colors.grey[400]
+                                : Colors.grey[600],
                           ),
                         ),
                       ),
@@ -170,6 +202,7 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
+                color: _isDarkMode ? Colors.grey[800] : Colors.white,
                 child: Padding(
                   padding: EdgeInsets.all(16),
                   child: Column(
@@ -180,6 +213,7 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
+                          color: _isDarkMode ? Colors.white : Colors.black,
                         ),
                       ),
                       SizedBox(height: 20),
@@ -199,8 +233,11 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                                 spots: moodData,
                                 isCurved: true,
                                 barWidth: 4,
+                                color: _getBackgroundColor(selectedMood),
                                 belowBarData: BarAreaData(
                                   show: true,
+                                  color: _getBackgroundColor(selectedMood)
+                                      .withOpacity(0.3),
                                 ),
                                 dotData: FlDotData(show: true),
                               ),
@@ -211,15 +248,65 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                       SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children:
+                            ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                                .map((day) => Text(
+                                      day,
+                                      style: TextStyle(
+                                        color: _isDarkMode
+                                            ? Colors.white
+                                            : Colors.black,
+                                      ),
+                                    ))
+                                .toList(),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+
+              // Streak Counter (New Feature)
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                color: _isDarkMode ? Colors.grey[800] : Colors.white,
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          'Mon',
-                          'Tue',
-                          'Wed',
-                          'Thu',
-                          'Fri',
-                          'Sat',
-                          'Sun'
-                        ].map((day) => Text(day)).toList(),
+                          Text(
+                            'Daily Check-in Streak',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: _isDarkMode ? Colors.white : Colors.black,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            'Keep it up!',
+                            style: TextStyle(
+                              color: _isDarkMode
+                                  ? Colors.grey[400]
+                                  : Colors.grey[600],
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        '🔥 $_streakDays days',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orange,
+                        ),
                       ),
                     ],
                   ),
@@ -233,42 +320,39 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: _isDarkMode ? Colors.white : Colors.white,
                 ),
               ),
               SizedBox(height: 10),
-              GridView.count(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                childAspectRatio: 1.2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
+              Column(
                 children: [
-                  _buildFeatureCard(
-                    icon: Icons.video_call,
-                    title: 'Therapist Connect',
-                    color: Colors.blue,
-                    onTap: () {
-                      // Navigate to therapist connect
-                    },
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: _buildFeatureCard(
+                          icon: Icons.chat,
+                          title: 'Suusri Chat AI',
+                          color: Colors.green,
+                          onTap: () {
+                            // Navigate to chat
+                          },
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: _buildFeatureCard(
+                          icon: Icons.self_improvement,
+                          title: 'Meditation Room',
+                          color: Colors.orange,
+                          onTap: () {
+                            // Navigate to meditation
+                          },
+                        ),
+                      ),
+                    ],
                   ),
-                  _buildFeatureCard(
-                    icon: Icons.chat,
-                    title: 'Suusri Chat AI',
-                    color: Colors.green,
-                    onTap: () {
-                      // Navigate to chat
-                    },
-                  ),
-                  _buildFeatureCard(
-                    icon: Icons.self_improvement,
-                    title: 'Meditation Room',
-                    color: Colors.orange,
-                    onTap: () {
-                      // Navigate to meditation
-                    },
-                  ),
+                  SizedBox(height: 10),
                   _buildFeatureCard(
                     icon: Icons.music_note,
                     title: 'Mood Music',
@@ -281,12 +365,67 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
               ),
               SizedBox(height: 20),
 
+              // Journal Feature (New Feature)
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                color: _isDarkMode ? Colors.grey[800] : Colors.white,
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Daily Journal',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: _isDarkMode ? Colors.white : Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      TextField(
+                        maxLines: 3,
+                        decoration: InputDecoration(
+                          hintText: 'Write about your day...',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          filled: true,
+                          fillColor:
+                              _isDarkMode ? Colors.grey[700] : Colors.grey[100],
+                        ),
+                        style: TextStyle(
+                          color: _isDarkMode ? Colors.white : Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Save Entry'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: _getBackgroundColor(selectedMood),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+
               // Weekly Suggestions
               Card(
                 elevation: 5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
+                color: _isDarkMode ? Colors.grey[800] : Colors.white,
                 child: Padding(
                   padding: EdgeInsets.all(16),
                   child: Column(
@@ -297,6 +436,7 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
+                          color: _isDarkMode ? Colors.white : Colors.black,
                         ),
                       ),
                       SizedBox(height: 10),
@@ -351,6 +491,13 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
               ],
             ),
             borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 4,
+                offset: Offset(2, 2),
+              ),
+            ],
           ),
           child: Center(
             child: Column(
@@ -378,17 +525,31 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
   Widget _buildSuggestionTile(String text, IconData icon, Color color) {
     return ListTile(
       leading: Icon(icon, color: color),
-      title: Text(text),
+      title: Text(
+        text,
+        style: TextStyle(
+          color: _isDarkMode ? Colors.white : Colors.black,
+        ),
+      ),
       minLeadingWidth: 0,
     );
   }
 
-  Color _getBackgroundColor(double moodValue) {
-    if (moodValue < 2) return Colors.blue; // Sad
-    if (moodValue < 3) return Colors.red; // Angry
-    if (moodValue < 4) return const Color.fromARGB(255, 20, 118, 7); // Neutral
-    if (moodValue < 5) return Colors.green; // Happy
-    return Colors.indigo; // Sleepy
+  Color _getBackgroundColor(String mood) {
+    switch (mood) {
+      case '😢':
+        return Colors.blue;
+      case '😠':
+        return Colors.red;
+      case '😐':
+        return Colors.grey;
+      case '😊':
+        return Colors.green;
+      case '😴':
+        return Colors.indigo;
+      default:
+        return Colors.grey;
+    }
   }
 
   Color _getWellnessColor(double score) {
@@ -401,260 +562,5 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
     if (score < 40) return "Let's work on improving this together";
     if (score < 70) return "Good progress! Keep it up";
     return "Excellent! You're doing great";
-  }
-}
-
-class HealthMonitorScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Health Monitor'),
-      ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Card(
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text(
-                      '😊 Emotion Detected: Neutral',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      '📱 Screen Time: 4hr 35min',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      '📊 Top Apps: YouTube, Instagram, WhatsApp',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      '🌈 Suggestion: Try going offline for 1 hour with meditation or outdoor walk',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Weekly Trends',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            Card(
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Emotion Trends',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      height: 200,
-                      child: BarChart(
-                        BarChartData(
-                          alignment: BarChartAlignment.spaceAround,
-                          barGroups: [
-                            BarChartGroupData(x: 0, barRods: [
-                              BarChartRodData(toY: 3, color: Colors.blue)
-                            ]),
-                            BarChartGroupData(x: 1, barRods: [
-                              BarChartRodData(toY: 5, color: Colors.green)
-                            ]),
-                            BarChartGroupData(x: 2, barRods: [
-                              BarChartRodData(toY: 2, color: Colors.red)
-                            ]),
-                            BarChartGroupData(x: 3, barRods: [
-                              BarChartRodData(toY: 4, color: Colors.green)
-                            ]),
-                            BarChartGroupData(x: 4, barRods: [
-                              BarChartRodData(toY: 3, color: Colors.blue)
-                            ]),
-                            BarChartGroupData(x: 5, barRods: [
-                              BarChartRodData(toY: 6, color: Colors.green)
-                            ]),
-                            BarChartGroupData(x: 6, barRods: [
-                              BarChartRodData(toY: 5, color: Colors.green)
-                            ]),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class SuusriChatScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Suusri Chat'),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.all(16),
-              children: [
-                _buildChatBubble(
-                  'Hi there! How are you feeling today?',
-                  false,
-                ),
-                _buildChatBubble(
-                  'I\'m feeling a bit overwhelmed',
-                  true,
-                ),
-                _buildChatBubble(
-                  'I understand. Would you like to talk about it or try a relaxing activity?',
-                  false,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Type your message...',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.send),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildChatBubble(String text, bool isMe) {
-    return Align(
-      alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 4),
-        padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: isMe ? Colors.blue[100] : Colors.grey[200],
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(isMe ? 12 : 0),
-            topRight: Radius.circular(isMe ? 0 : 12),
-            bottomLeft: Radius.circular(12),
-            bottomRight: Radius.circular(12),
-          ),
-        ),
-        child: Text(text),
-      ),
-    );
-  }
-}
-
-class MusicPlayerScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Mood Music'),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: Text(
-              'Recommended Based On Your Mood',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Expanded(
-            child: ListView(
-              children: [
-                _buildMusicTile('Calm Piano', 'Relaxing instrumental piano'),
-                _buildMusicTile('Nature Sounds', 'Rain and thunderstorm'),
-                _buildMusicTile('Binaural Beats', 'Focus and concentration'),
-                _buildMusicTile('Lofi Vibes', 'Chill study beats'),
-                _buildMusicTile('Deep Sleep', 'Guided sleep meditation'),
-              ],
-            ),
-          ),
-          Container(
-            height: 80,
-            color: Colors.grey[200],
-            child: Row(
-              children: [
-                IconButton(
-                  icon: Icon(Icons.skip_previous),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(Icons.play_arrow),
-                  onPressed: () {},
-                  iconSize: 36,
-                ),
-                IconButton(
-                  icon: Icon(Icons.skip_next),
-                  onPressed: () {},
-                ),
-                Expanded(
-                  child: Slider(
-                    value: 0.3,
-                    onChanged: (value) {},
-                  ),
-                ),
-                Text('1:45 / 4:30'),
-                SizedBox(width: 8),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMusicTile(String title, String subtitle) {
-    return ListTile(
-      leading: Icon(Icons.music_note),
-      title: Text(title),
-      subtitle: Text(subtitle),
-      trailing: IconButton(
-        icon: Icon(Icons.favorite_border),
-        onPressed: () {},
-      ),
-    );
   }
 }
