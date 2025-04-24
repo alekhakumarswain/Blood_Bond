@@ -55,7 +55,9 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
-                      color: _isDarkMode ? Colors.white : Colors.white,
+                      color: _isDarkMode
+                          ? const Color.fromARGB(255, 25, 241, 14)
+                          : Colors.white,
                     ),
                   ),
                   IconButton(
@@ -77,7 +79,10 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                 style: TextStyle(
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
-                  color: _isDarkMode ? Colors.white70 : Colors.white70,
+                  fontWeight: FontWeight.w800,
+                  color: _isDarkMode
+                      ? const Color.fromARGB(179, 167, 39, 235)
+                      : const Color.fromARGB(179, 42, 77, 1),
                 ),
               ),
               SizedBox(height: 30),
@@ -184,9 +189,10 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
                           _getWellnessMessage(wellnessScore),
                           style: TextStyle(
                             fontSize: 16,
+                            fontWeight: FontWeight.w500,
                             color: _isDarkMode
-                                ? Colors.grey[400]
-                                : Colors.grey[600],
+                                ? const Color.fromARGB(255, 165, 241, 102)
+                                : const Color.fromARGB(255, 33, 150, 3),
                           ),
                         ),
                       ),
@@ -542,7 +548,7 @@ class _MentalHealthDashboardState extends State<MentalHealthDashboard> {
       case '😠':
         return Colors.red;
       case '😐':
-        return Colors.grey;
+        return const Color.fromARGB(255, 101, 169, 203);
       case '😊':
         return Colors.green;
       case '😴':
