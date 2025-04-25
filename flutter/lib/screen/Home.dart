@@ -8,6 +8,7 @@ import 'package:blood_bond/screen/profile/health_records.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:blood_bond/screen/mentalHealth.dart';
+import 'package:blood_bond/screen/Healthmonitor.dart';
 
 class HomeScreen extends StatelessWidget {
   List DoctorImg = [
@@ -429,10 +430,8 @@ class HomeScreen extends StatelessWidget {
                 title: "Health Records",
                 subtitle: "Manage Your Health Records",
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => HealthRecordsScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HealthRecord()));
                 },
               ),
               SizedBox(height: 20),
@@ -444,7 +443,7 @@ class HomeScreen extends StatelessWidget {
                 subtitle: "Track Your Health",
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                      MaterialPageRoute(builder: (context) => HealthMonitor()));
                 },
               ),
               SizedBox(height: 20),
