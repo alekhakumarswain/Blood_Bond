@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "1087644289639",
+    "firebase_url": "https://blood--bond-default-rtdb.firebaseio.com",
+    "project_id": "blood--bond",
+    "storage_bucket": "blood--bond.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087644289639:android:1986dc8ab92a2d1ac7e2c2",
+        "android_client_info": {
+          "package_name": "com.example.blood_bond"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087644289639-fteg28tcvtqompr78n35if1kmj7bh2d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL47vT9ZRY_iRkmS7VlVuzLRn8JdxS2O4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087644289639-fteg28tcvtqompr78n35if1kmj7bh2d4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1087644289639-rku4aqa6pb2skn1rhe3ih7ieoh49qqp8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mas.bloodbond"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087644289639:android:3fdfd546623335d8c7e2c2",
+        "android_client_info": {
+          "package_name": "com.mas.bloodbond"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087644289639-fteg28tcvtqompr78n35if1kmj7bh2d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL47vT9ZRY_iRkmS7VlVuzLRn8JdxS2O4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087644289639-fteg28tcvtqompr78n35if1kmj7bh2d4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1087644289639-rku4aqa6pb2skn1rhe3ih7ieoh49qqp8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mas.bloodbond"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

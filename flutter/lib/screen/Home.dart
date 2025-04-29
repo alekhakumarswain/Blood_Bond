@@ -1,11 +1,12 @@
+import 'package:blood_bond/screen/Doctor.dart';
 import 'package:blood_bond/screen/Medicine.dart';
 import 'package:blood_bond/screen/Profile.dart';
 import 'package:blood_bond/screen/BloodTestPage.dart';
 import 'package:blood_bond/screen/BloodDonateReceivePage.dart';
 import 'package:blood_bond/screen/Ai.dart';
+import 'package:blood_bond/screen/profile/userdetails.dart';
 import 'package:flutter/material.dart';
-import 'package:blood_bond/screen/profile/health_records.dart';
-import 'package:flutter/material.dart';
+import 'profile/health_records.dart';
 import 'package:flutter/services.dart';
 import 'package:blood_bond/screen/mentalHealth.dart';
 import 'package:blood_bond/screen/Healthmonitor.dart';
@@ -81,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MedicineScreen()));
+                              builder: (context) => BloodTestPage()));
                     },
                     child: Container(
                       padding: EdgeInsets.all(20),
@@ -320,7 +321,12 @@ class HomeScreen extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DoctorScreen()));
+                    },
                     child: Container(
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.symmetric(vertical: 15),
@@ -413,13 +419,11 @@ class HomeScreen extends StatelessWidget {
                 icon: Icons.local_hospital,
                 iconColor: Colors.green,
                 backgroundColor: Colors.lightGreen,
-                title: "Online Consultation",
+                title: "Doctor Consultation",
                 subtitle: "Consult with Doctors",
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MedicineScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DoctorScreen()));
                 },
               ),
               SizedBox(height: 20),
@@ -430,8 +434,10 @@ class HomeScreen extends StatelessWidget {
                 title: "Health Records",
                 subtitle: "Manage Your Health Records",
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HealthRecord()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => UserDetailsScreen()));
                 },
               ),
               SizedBox(height: 20),
