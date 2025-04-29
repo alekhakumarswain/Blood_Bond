@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 10),
               Padding(
                 padding: EdgeInsets.all(20),
-                child: Image.asset("images/doctors.png"),
+                child: Image.asset("assets/images/doctors.png"),
               ),
               SizedBox(height: 10),
               Padding(
