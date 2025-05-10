@@ -1,9 +1,0 @@
-d:/Raja/Project/project/Flutter/blood_bond/ml_model/
-├── .env
-├── data/
-├── models/
-├── requirements.txt
-└── scripts/
-    ├── predict.py
-    ├── preprocess.py
-    └── train_model.py
