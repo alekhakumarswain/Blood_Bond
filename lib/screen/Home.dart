@@ -6,6 +6,7 @@ import 'package:blood_bond/screen/BloodDonateReceivePage.dart';
 import 'package:blood_bond/screen/Ai.dart';
 import 'package:blood_bond/screen/mentalHealth.dart';
 import 'package:blood_bond/screen/Healthmonitor.dart';
+import 'package:blood_bond/screen/profile/userdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -456,7 +457,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ProfileUpdateScreen()));
+                          builder: (context) => UserDetailsScreen()));
                 },
               ),
               SizedBox(height: 20),

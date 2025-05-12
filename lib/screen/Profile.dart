@@ -1,9 +1,64 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import './profile/userdetails.dart';
 import 'welcome.dart'; // Import WelcomeScreen for navigation after sign-out
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  late FirebaseDatabase _database;
+  Map<String, dynamic>? personalInfo;
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _database = FirebaseDatabase.instance;
+    fetchUserData();
+  }
+
+  String getSafePath(String phone) {
+    return phone.replaceAll(RegExp(r'[.#$/[\]]'), '_');
+  }
+
+  Future<void> fetchUserData() async {
+    try {
+      // Assuming the phone number is stored or retrieved from Firebase Auth
+      final userPhone =
+          FirebaseAuth.instance.currentUser?.phoneNumber ?? '918018226416';
+      final safePhone = '918018226416'; // getSafePath(userPhone);
+      final snapshot = await _database
+          .ref()
+          .child('users/$safePhone/personalInformation')
+          .get();
+
+      if (snapshot.exists) {
+        setState(() {
+          personalInfo = Map<String, dynamic>.from(snapshot.value as Map);
+          isLoading = false;
+        });
+      } else {
+        setState(() {
+          isLoading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('User data not found')),
+        );
+      }
+    } catch (e) {
+      setState(() {
+        isLoading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to fetch user data: $e')),
+      );
+    }
+  }
+
   // Function to handle sign-out
   Future<void> _signOut(BuildContext context) async {
     try {
@@ -24,6 +79,20 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (isLoading) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text("Profile"),
+          backgroundColor: Color(0xFF085D2D),
+        ),
+        body: Center(
+          child: CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF085D2D)),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
@@ -46,11 +115,7 @@ class ProfileScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 60,
-                    backgroundColor: const Color.fromARGB(255, 99, 203, 222),
-                    backgroundImage: AssetImage("assets/images/user1.png"),
-                  ),
+                  // Removed CircleAvatar (Profile Photo)
                 ],
               ),
             ),
@@ -72,7 +137,7 @@ class ProfileScreen extends StatelessWidget {
                   ProfileInfoCard(
                     icon: Icons.person,
                     title: "Name",
-                    subtitle: "Raja",
+                    subtitle: personalInfo?['name'] ?? 'Raja',
                     onEdit: () {
                       // Navigate to edit screen or show dialog
                     },
@@ -81,7 +146,7 @@ class ProfileScreen extends StatelessWidget {
                   ProfileInfoCard(
                     icon: Icons.email,
                     title: "Email",
-                    subtitle: "raja@example.com",
+                    subtitle: personalInfo?['email'] ?? 'raja@example.com',
                     onEdit: () {
                       // Navigate to edit screen or show dialog
                     },
@@ -90,7 +155,7 @@ class ProfileScreen extends StatelessWidget {
                   ProfileInfoCard(
                     icon: Icons.phone,
                     title: "Phone",
-                    subtitle: "+1 123 456 7890",
+                    subtitle: personalInfo?['phone'] ?? '+1 123 456 7890',
                     onEdit: () {
                       // Navigate to edit screen or show dialog
                     },
@@ -99,7 +164,8 @@ class ProfileScreen extends StatelessWidget {
                   ProfileInfoCard(
                     icon: Icons.location_city,
                     title: "Address",
-                    subtitle: "123 Street, City, Country",
+                    subtitle:
+                        personalInfo?['address'] ?? '123 Street, City, Country',
                     onEdit: () {
                       // Navigate to edit screen or show dialog
                     },
@@ -127,45 +193,8 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 15),
-                  SettingsCard(
-                    icon: Icons.lock,
-                    iconColor: Colors.red,
-                    backgroundColor: Colors.pink,
-                    title: "Change Password",
-                    onTap: () {
-                      // Navigate to Change Password screen
-                    },
-                  ),
-                  SizedBox(height: 10),
-                  SettingsCard(
-                    icon: Icons.notifications,
-                    iconColor: Colors.blue,
-                    backgroundColor: Colors.lightBlue,
-                    title: "Notification Settings",
-                    onTap: () {
-                      // Navigate to Notification Settings screen
-                    },
-                  ),
-                  SizedBox(height: 10),
-                  SettingsCard(
-                    icon: Icons.privacy_tip,
-                    iconColor: Colors.green,
-                    backgroundColor: Colors.lightGreen,
-                    title: "Privacy Settings",
-                    onTap: () {
-                      // Navigate to Privacy Settings screen
-                    },
-                  ),
-                  SizedBox(height: 10),
-                  SettingsCard(
-                    icon: Icons.language,
-                    iconColor: Colors.orange,
-                    backgroundColor: Colors.deepOrange,
-                    title: "Language",
-                    onTap: () {
-                      // Navigate to Language Settings screen
-                    },
-                  ),
+                  // Removed Change Password, Notification Settings, and Privacy Settings
+
                   SizedBox(height: 10),
                   SettingsCard(
                     icon: Icons.logout,
