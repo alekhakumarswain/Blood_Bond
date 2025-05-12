@@ -1,7 +1,27 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import './profile/userdetails.dart';
+import 'welcome.dart'; // Import WelcomeScreen for navigation after sign-out
 
 class ProfileScreen extends StatelessWidget {
+  // Function to handle sign-out
+  Future<void> _signOut(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => WelcomeScreen()),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error signing out: $e'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,9 +104,7 @@ class ProfileScreen extends StatelessWidget {
                       // Navigate to edit screen or show dialog
                     },
                   ),
-                  SizedBox(height: 20),
-
-                  // New card to navigate to User Details screen
+                  SizedBox(height: 10),
                   ProfileInfoCard(
                     icon: Icons.person_outline,
                     title: "View More Details",
@@ -99,7 +117,6 @@ class ProfileScreen extends StatelessWidget {
                       );
                     },
                   ),
-
                   SizedBox(height: 20),
                   Text(
                     "Account Settings",
@@ -148,6 +165,14 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {
                       // Navigate to Language Settings screen
                     },
+                  ),
+                  SizedBox(height: 10),
+                  SettingsCard(
+                    icon: Icons.logout,
+                    iconColor: Colors.redAccent,
+                    backgroundColor: Colors.red,
+                    title: "Sign Out",
+                    onTap: () => _signOut(context),
                   ),
                 ],
               ),

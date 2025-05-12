@@ -4,13 +4,34 @@ import 'package:blood_bond/screen/Profile.dart';
 import 'package:blood_bond/screen/BloodTestPage.dart';
 import 'package:blood_bond/screen/BloodDonateReceivePage.dart';
 import 'package:blood_bond/screen/Ai.dart';
-import 'package:blood_bond/screen/profile/userdetails.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:blood_bond/screen/mentalHealth.dart';
 import 'package:blood_bond/screen/Healthmonitor.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'profile_update.dart'; // Import ProfileUpdateScreen
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String userName = 'User'; // Default name
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserName();
+  }
+
+  Future<void> _loadUserName() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      userName = prefs.getString('name') ?? 'User';
+    });
+  }
+
   List DoctorImg = [
     "doctor1.jpg",
     "doctor2.jpg",
@@ -43,8 +64,7 @@ class HomeScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Text("Blood Bond"),
           centerTitle: true,
-          backgroundColor:
-              Color(0xFFBE179A), // Match the color with BloodTestPage
+          backgroundColor: Color(0xFFBE179A),
         ),
         body: SingleChildScrollView(
           padding: EdgeInsets.only(top: 5),
@@ -57,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Hello Raja",
+                      "Hello $userName",
                       style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
@@ -303,7 +323,7 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 15),
                 child: Text(
-                  "Popular  Doctors",
+                  "Popular Doctors",
                   style: TextStyle(
                     fontSize: 23,
                     fontWeight: FontWeight.w700,
@@ -431,12 +451,12 @@ class HomeScreen extends StatelessWidget {
                 iconColor: Colors.orange,
                 backgroundColor: Colors.deepOrange,
                 title: "Health Records",
-                subtitle: "Manage Your Health Records",
+                subtitle: "Please update your profile first",
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => UserDetailsScreen()));
+                          builder: (context) => ProfileUpdateScreen()));
                 },
               ),
               SizedBox(height: 20),

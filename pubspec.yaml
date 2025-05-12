@@ -62,7 +62,7 @@ dependencies:
   csv: ^6.0.0
   shimmer: ^3.0.0
   just_audio: ^0.10.0
-  pigeon: ^25.3.1
+  firebase_database: ^10.5.7
 
 dev_dependencies:
   flutter_test:

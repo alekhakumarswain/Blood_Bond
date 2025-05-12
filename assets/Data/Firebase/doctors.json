@@ -1,0 +1,1881 @@
+{
+  "doctors": {
+    "1": {
+      "id": 1,
+      "name": "Dr. R K Sharma",
+      "specialty": "Cardiologist",
+      "experience": "10 years",
+      "hospital": "Apollo Hospital",
+      "address": "Bhubaneswar, Odisha",
+      "rating": 4.8,
+      "availableNow": true,
+      "lat": 20.333,
+      "lng": 85.821
+    },
+    "2": {
+      "id": 2,
+      "name": "Dr. P K Mishra",
+      "specialty": "Dermatologist",
+      "experience": "8 years",
+      "hospital": "KIMS Hospital",
+      "address": "Patia, Bhubaneswar",
+      "rating": 4.5,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 10 AM",
+      "lat": 20.354,
+      "lng": 85.822
+    },
+    "3": {
+      "id": 3,
+      "name": "Dr. A R Ray",
+      "specialty": "Neurologist",
+      "experience": "15 years",
+      "hospital": "AIIMS Bhubaneswar",
+      "address": "Infocity, Bhubaneswar",
+      "rating": 4.9,
+      "availableNow": true,
+      "lat": 20.334,
+      "lng": 85.810
+    },
+    "4": {
+      "id": 4,
+      "name": "Dr. S Jena",
+      "specialty": "Orthopedist",
+      "experience": "12 years",
+      "hospital": "Sparsh Hospital",
+      "address": "Saheed Nagar, Bhubaneswar",
+      "rating": 4.7,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 2 PM",
+      "lat": 20.291,
+      "lng": 85.845
+    },
+    "5": {
+      "id": 5,
+      "name": "Dr. M Das",
+      "specialty": "Pediatrician",
+      "experience": "7 years",
+      "hospital": "Care Hospital",
+      "address": "Chandrasekharpur, Bhubaneswar",
+      "rating": 4.6,
+      "availableNow": true,
+      "lat": 20.324,
+      "lng": 85.817
+    },
+    "6": {
+      "id": 6,
+      "name": "Dr. N Sahoo",
+      "specialty": "Gastroenterologist",
+      "experience": "20 years",
+      "hospital": "SUM Hospital",
+      "address": "Kalinga Nagar, Bhubaneswar",
+      "rating": 4.9,
+      "availableNow": true,
+      "lat": 20.260,
+      "lng": 85.839
+    },
+    "7": {
+      "id": 7,
+      "name": "Dr. K Behera",
+      "specialty": "ENT Specialist",
+      "experience": "9 years",
+      "hospital": "AMRI Hospital",
+      "address": "Jaydev Vihar, Bhubaneswar",
+      "rating": 4.4,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 11 AM",
+      "lat": 20.299,
+      "lng": 85.824
+    },
+    "8": {
+      "id": 8,
+      "name": "Dr. T Mohanty",
+      "specialty": "Oncologist",
+      "experience": "14 years",
+      "hospital": "Apollo Hospital",
+      "address": "Bhubaneswar, Odisha",
+      "rating": 4.8,
+      "availableNow": true,
+      "lat": 20.333,
+      "lng": 85.821
+    },
+    "9": {
+      "id": 9,
+      "name": "Dr. L Panda",
+      "specialty": "Gynecologist",
+      "experience": "11 years",
+      "hospital": "KIMS Hospital",
+      "address": "Patia, Bhubaneswar",
+      "rating": 4.7,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 3 PM",
+      "lat": 20.354,
+      "lng": 85.822
+    },
+    "10": {
+      "id": 10,
+      "name": "Dr. B Swain",
+      "specialty": "Urologist",
+      "experience": "13 years",
+      "hospital": "AIIMS Bhubaneswar",
+      "address": "Infocity, Bhubaneswar",
+      "rating": 4.9,
+      "availableNow": true,
+      "lat": 20.334,
+      "lng": 85.810
+    },
+    "11": {
+      "id": 11,
+      "name": "Dr. C Mohanty",
+      "specialty": "Psychiatrist",
+      "experience": "6 years",
+      "hospital": "Sparsh Hospital",
+      "address": "Saheed Nagar, Bhubaneswar",
+      "rating": 4.5,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 1 PM",
+      "lat": 20.291,
+      "lng": 85.845
+    },
+    "12": {
+      "id": 12,
+      "name": "Dr. D Patra",
+      "specialty": "Endocrinologist",
+      "experience": "5 years",
+      "hospital": "Care Hospital",
+      "address": "Chandrasekharpur, Bhubaneswar",
+      "rating": 4.6,
+      "availableNow": true,
+      "lat": 20.324,
+      "lng": 85.817
+    },
+    "13": {
+      "id": 13,
+      "name": "Dr. E Sahu",
+      "specialty": "Nephrologist",
+      "experience": "18 years",
+      "hospital": "SUM Hospital",
+      "address": "Kalinga Nagar, Bhubaneswar",
+      "rating": 4.8,
+      "availableNow": true,
+      "lat": 20.260,
+      "lng": 85.839
+    },
+    "14": {
+      "id": 14,
+      "name": "Dr. F Nayak",
+      "specialty": "Rheumatologist",
+      "experience": "10 years",
+      "hospital": "AMRI Hospital",
+      "address": "Jaydev Vihar, Bhubaneswar",
+      "rating": 4.7,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 12 PM",
+      "lat": 20.299,
+      "lng": 85.824
+    },
+    "15": {
+      "id": 15,
+      "name": "Dr. G Mohanty",
+      "specialty": "Pulmonologist",
+      "experience": "9 years",
+      "hospital": "Apollo Hospital",
+      "address": "Bhubaneswar, Odisha",
+      "rating": 4.6,
+      "availableNow": true,
+      "lat": 20.333,
+      "lng": 85.821
+    },
+    "16": {
+      "id": 16,
+      "name": "Dr. H Sahu",
+      "specialty": "Hematologist",
+      "experience": "11 years",
+      "hospital": "KIMS Hospital",
+      "address": "Patia, Bhubaneswar",
+      "rating": 4.5,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 4 PM",
+      "lat": 20.354,
+      "lng": 85.822
+    },
+    "17": {
+      "id": 17,
+      "name": "Dr. I Panda",
+      "specialty": "Geriatrician",
+      "experience": "7 years",
+      "hospital": "AIIMS Bhubaneswar",
+      "address": "Infocity, Bhubaneswar",
+      "rating": 4.9,
+      "availableNow": true,
+      "lat": 20.334,
+      "lng": 85.810
+    },
+    "18": {
+      "id": 18,
+      "name": "Dr. J Behera",
+      "specialty": "Allergist",
+      "experience": "8 years",
+      "hospital": "Sparsh Hospital",
+      "address": "Saheed Nagar, Bhubaneswar",
+      "rating": 4.4,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 5 PM",
+      "lat": 20.291,
+      "lng": 85.845
+    },
+    "19": {
+      "id": 19,
+      "name": "Dr. K Mohanty",
+      "specialty": "Infectious Disease Specialist",
+      "experience": "12 years",
+      "hospital": "Care Hospital",
+      "address": "Chandrasekharpur, Bhubaneswar",
+      "rating": 4.8,
+      "availableNow": true,
+      "lat": 20.324,
+      "lng": 85.817
+    },
+    "20": {
+      "id": 20,
+      "name": "Dr. L Sahu",
+      "specialty": "Sports Medicine Specialist",
+      "experience": "10 years",
+      "hospital": "SUM Hospital",
+      "address": "Kalinga Nagar, Bhubaneswar",
+      "rating": 4.7,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 6 PM",
+      "lat": 20.260,
+      "lng": 85.839
+    },
+    "21": {
+      "id": 21,
+      "name": "Dr. M Nayak",
+      "specialty": "Pain Management Specialist",
+      "experience": "9 years",
+      "hospital": "AMRI Hospital",
+      "address": "Jaydev Vihar, Bhubaneswar",
+      "rating": 4.6,
+      "availableNow": true,
+      "lat": 20.299,
+      "lng": 85.824
+    },
+    "22": {
+      "id": 22,
+      "name": "Dr. N Mohanty",
+      "specialty": "Transplant Surgeon",
+      "experience": "14 years",
+      "hospital": "Apollo Hospital",
+      "address": "Bhubaneswar, Odisha",
+      "rating": 4.8,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 7 PM",
+      "lat": 20.333,
+      "lng": 85.821
+    },
+    "23": {
+      "id": 23,
+      "name": "Dr. O Panda",
+      "specialty": "Vascular Surgeon",
+      "experience": "11 years",
+      "hospital": "KIMS Hospital",
+      "address": "Patia, Bhubaneswar",
+      "rating": 4.7,
+      "availableNow": true,
+      "lat": 20.354,
+      "lng": 85.822
+    },
+    "24": {
+      "id": 24,
+      "name": "Dr. P Sahu",
+      "specialty": "Plastic Surgeon",
+      "experience": "13 years",
+      "hospital": "AIIMS Bhubaneswar",
+      "address": "Infocity, Bhubaneswar",
+      "rating": 4.9,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 8 PM",
+      "lat": 20.334,
+      "lng": 85.810
+    },
+    "25": {
+      "id": 25,
+      "name": "Dr. Q Behera",
+      "specialty": "Cosmetic Surgeon",
+      "experience": "6 years",
+      "hospital": "Sparsh Hospital",
+      "address": "Saheed Nagar, Bhubaneswar",
+      "rating": 4.5,
+      "availableNow": true,
+      "lat": 20.291,
+      "lng": 85.845
+    },
+    "26": {
+      "id": 26,
+      "name": "Dr. R Mohanty",
+      "specialty": "Reconstructive Surgeon",
+      "experience": "5 years",
+      "hospital": "Care Hospital",
+      "address": "Chandrasekharpur, Bhubaneswar",
+      "rating": 4.6,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 9 PM",
+      "lat": 20.324,
+      "lng": 85.817
+    },
+    "27": {
+      "id": 27,
+      "name": "Dr. S Nayak",
+      "specialty": "Bariatric Surgeon",
+      "experience": "18 years",
+      "hospital": "SUM Hospital",
+      "address": "Kalinga Nagar, Bhubaneswar",
+      "rating": 4.8,
+      "availableNow": true,
+      "lat": 20.260,
+      "lng": 85.839
+    },
+    "28": {
+      "id": 28,
+      "name": "Dr. T Sahu",
+      "specialty": "Cardiothoracic Surgeon",
+      "experience": "10 years",
+      "hospital": "AMRI Hospital",
+      "address": "Jaydev Vihar, Bhubaneswar",
+      "rating": 4.7,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 10 PM",
+      "lat": 20.299,
+      "lng": 85.824
+    },
+    "29": {
+      "id": 29,
+      "name": "Dr. U Mohanty",
+      "specialty": "Neurosurgeon",
+      "experience": "11 years",
+      "hospital": "Apollo Hospital",
+      "address": "Bhubaneswar, Odisha",
+      "rating": 4.6,
+      "availableNow": true,
+      "lat": 20.333,
+      "lng": 85.821
+    },
+    "30": {
+      "id": 30,
+      "name": "Dr. V Panda",
+      "specialty": "Orthopedic Surgeon",
+      "experience": "12 years",
+      "hospital": "KIMS Hospital",
+      "address": "Patia, Bhubaneswar",
+      "rating": 4.5,
+      "availableNow": false,
+      "nextSlot": "Tomorrow, 11 PM",
+      "lat": 20.354,
+      "lng": 85.822
+    },
+    "31": {
+      "id": 31,
+      "name": "Dr. W Behera",
+      "specialty": "Ophthalmologist",
+      "experience": "9 years",
+      "hospital": "AIIMS Bhubaneswar",
+      "address": "Infocity, Bhubaneswar",
+      "rating": 4.9,
+      "availableNow": true,
+      "lat": 20.334,
+      "lng": 85.810
+    }
+  },
+  "users": {
+    "918018226416": {
+      "personalInformation": {
+        "name": "Alekha Kumar Swain",
+        "dob": "2025-03-13T00:00:00.000Z",
+        "gender": "Male",
+        "bloodType": "A-",
+        "phone": "+918018226416",
+        "emergencyContact": {
+          "name": "Puja swain",
+          "phone": "+917749897273"
+        },
+        "address": "ASTARANG, Beguniabasta",
+        "occupation": "Self-employed"
+      },
+      "insuranceInformation": {
+        "provider": "",
+        "policyNumber": "",
+        "insuranceFile": ""
+      },
+      "bloodDonationHistory": {
+        "lastDonationDate": "2024-12-09T00:00:00.000Z",
+        "totalDonations": 1,
+        "eligibleForDonation": true
+      },
+      "healthMetrics": {
+        "bloodPressure": "120/80",
+        "heartRate": 72,
+        "weight": 80,
+        "height": 123
+      },
+      "medicalHistory": {
+        "chronicConditions": ["Heart Disease"],
+        "surgeries": false,
+        "surgeryDetails": "",
+        "medicationAllergies": [],
+        "otherAllergies": "",
+        "familyHistory": ["Stroke"],
+        "otherFamilyHistory": ""
+      },
+      "medications": {
+        "currentMeds": false,
+        "medsList": [],
+        "pastMeds": "",
+        "ongoingTherapies": [],
+        "ongoingTherapiesOthers": ""
+      },
+      "medicalReports": {
+        "bloodReport": "",
+        "imagingReport": "",
+        "geneticOrBiopsyTest": false
+      },
+      "vaccinationHistory": {
+        "polioVaccine": true,
+        "tetanusShot": null,
+        "covidVaccine": "",
+        "covidBooster": false
+      },
+      "lifestyleFactors": {
+        "smokingStatus": "Never",
+        "cigarettesPerDay": 0,
+        "exerciseFrequency": "Rarely",
+        "sleepHours": 3,
+        "dietType": ["Vegetarian"],
+        "dietTypeOther": "",
+        "alcoholConsumption": "Never",
+        "alcoholFrequency": ""
+      },
+      "currentHealthStatus": {
+        "primarySymptoms": "",
+        "initialDiagnosis": "",
+        "followUpRequired": false,
+        "followUpDate": null
+      },
+      "bloodDonationRequests": {
+        "donationHistory": [],
+        "receiveRequests": []
+      },
+      "medicinePurchases": [
+        {
+          "medicineId": "med001",
+          "name": "Paracetamol 500mg",
+          "price": 50,
+          "dosage": "1 tablet every 6 hours",
+          "category": "pain-relief",
+          "quantity": 2,
+          "store": {
+            "storeId": "ssms001",
+            "storeName": "Apollo Pharmacy",
+            "address": "Apollo Pharmacy, Damana Square, Bhubaneswar, Odisha, India"
+          },
+          "purchaseDate": "2025-03-15",
+          "nextRefillDate": "2025-04-15"
+        },
+        {
+          "medicineId": "med003",
+          "name": "Metformin 500mg",
+          "price": 200,
+          "dosage": "1 tablet daily",
+          "category": "diabetes",
+          "quantity": 1,
+          "store": {
+            "storeId": "ssms002",
+            "storeName": "Acharya Drug House",
+            "address": "Acharya Drug House, Damana Square, Bhubaneswar, Odisha, India"
+          },
+          "purchaseDate": "2025-03-10",
+          "nextRefillDate": "2025-04-10"
+        }
+      ],
+      "appointments": [
+        {
+          "bookingId": "APT123456",
+          "doctorName": "Dr. R K Sharma",
+          "specialty": "Cardiologist",
+          "hospitalName": "Apollo Hospital",
+          "appointmentDate": "2025-04-10",
+          "appointmentTime": "10:00 AM",
+          "appointmentType": "In-person",
+          "address": "Bhubaneswar, Odisha",
+          "status": "Completed",
+          "notes": "Follow up for heart condition"
+        },
+        {
+          "bookingId": "APT789012",
+          "doctorName": "Dr. P K Mishra",
+          "specialty": "Dermatologist",
+          "hospitalName": "KIMS Hospital",
+          "appointmentDate": "2025-04-25",
+          "appointmentTime": "2:00 PM",
+          "appointmentType": "Virtual",
+          "virtualMeetingUrl": "https://meet.example.com/xyz123",
+          "status": "Upcoming"
+        }
+      ],
+      "bloodTests": [
+        {
+          "bookingId": "BTEST20250415",
+          "testType": "Complete Blood Count (CBC)",
+          "testDate": "2025-04-15",
+          "testTime": "09:30 AM",
+          "pathologyLab": {
+            "labId": "plab001",
+            "labName": "Dr Lal PathLabs Franchise",
+            "address": "Dr Lal PathLabs Franchise, Damana Square, Bhubaneswar, Odisha, India",
+            "contact": "9337255980",
+            "rating": 4.7,
+            "isNABLCertified": true,
+            "offersHomeCollection": true
+          },
+          "price": 299,
+          "status": "Scheduled",
+          "preparationInstructions": "Fasting required for 8 hours before test",
+          "resultsAvailable": false,
+          "resultsDate": null,
+          "results": null
+        },
+        {
+          "bookingId": "BTEST20250320",
+          "testType": "Lipid Profile",
+          "testDate": "2025-03-20",
+          "testTime": "11:00 AM",
+          "pathologyLab": {
+            "labId": "plab022",
+            "labName": "GENPATH DIAGNOSTICS. Metropolis Lab",
+            "address": "GENPATH DIAGNOSTICS. Metropolis Lab, Patia Square, Bhubaneswar, Odisha, India",
+            "contact": "9439389355",
+            "rating": 4.8,
+            "isNABLCertified": true,
+            "offersHomeCollection": true
+          },
+          "price": 599,
+          "status": "Completed",
+          "preparationInstructions": "Fasting required for 12 hours before test",
+          "resultsAvailable": true,
+          "resultsDate": "2025-03-21",
+          "results": {
+            "totalCholesterol": "180 mg/dL",
+            "hdlCholesterol": "60 mg/dL",
+            "ldlCholesterol": "100 mg/dL",
+            "triglycerides": "120 mg/dL",
+            "status": "Normal",
+            "doctorComments": "Results within normal range. Maintain current lifestyle."
+          }
+        }
+      ],
+      "healthGoals": {
+        "weightManagement": {
+          "targetWeight": 75,
+          "targetDate": "2025-12-31"
+        },
+        "fitnessGoals": ["Walk 10,000 steps daily", "Exercise 3 times per week"],
+        "nutritionGoals": ["Reduce sugar intake", "Increase vegetable consumption"]
+      },
+      "healthReminders": {
+        "medicationReminders": [
+          {
+            "medicationName": "Metformin",
+            "dosage": "500mg",
+            "times": ["08:00", "20:00"],
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+          }
+        ],
+        "appointmentReminders": true,
+        "waterIntakeReminder": {
+          "enabled": true,
+          "targetAmount": 2000,
+          "interval": 60
+        }
+      },
+      "deviceConnections": {
+        "fitnessTracker": "Mi Band 6",
+        "lastSync": "2025-04-24T08:30:00.000Z",
+        "connectedApps": ["Google Fit", "MyFitnessPal"]
+      },
+      "healthInsurance": {
+        "provider": "Star Health Insurance",
+        "policyNumber": "STAR12345678",
+        "validUntil": "2026-03-31",
+        "coverageAmount": 500000,
+        "networkHospitals": ["Apollo Hospitals", "KIMS Hospital"]
+      },
+      "systemMetadata": {
+        "createdAt": "2025-03-08T22:27:24.690Z",
+        "updatedAt": "2025-04-01T15:30:45.120Z",
+        "version": 2
+      }
+    }
+  },
+  "pathologyLabs": {
+    "plab001": {
+      "Area": "Damana Square",
+      "Patholab Name": "Dr Lal PathLabs Franchise",
+      "Direction Co-ordination": "20°20'02.2\"N 85°49'03.1\"E",
+      "Contact": 9337255980,
+      "storeid": "plab001",
+      "Latitude": 20.333946192751423,
+      "Longitude": 85.81752849365483,
+      "Address": "Dr Lal PathLabs Franchise, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Kidney Function Test",
+          "Price": 449
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        },
+        {
+          "Test": "Mini Health Package",
+          "Price": 799
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        },
+        {
+          "Test": "Basic Health Check",
+          "Price": 499
+        },
+        {
+          "Test": "Complete Health Check",
+          "Price": 1499
+        },
+        {
+          "Test": "Immunity Health Check",
+          "Price": 899
+        },
+        {
+          "Test": "Self Individual Test",
+          "Price": 199
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab002": {
+      "Area": "Damana Square",
+      "Patholab Name": "BIOLAB",
+      "Direction Co-ordination": "20°19'12.8\"N 85°49'05.0\"E",
+      "Contact": "",
+      "storeid": "plab002",
+      "Latitude": 20.320211765306965,
+      "Longitude": 85.81805852023275,
+      "Address": "BIOLAB, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1899
+        },
+        {
+          "Test": "Mini Health Package",
+          "Price": 799
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab003": {
+      "Area": "Damana Square",
+      "Patholab Name": "Pathkind Labs",
+      "Direction Co-ordination": "20°20'09.6\"N 85°49'16.7\"E",
+      "Contact": 9040011909,
+      "storeid": "plab003",
+      "Latitude": 20.33600077813348,
+      "Longitude": 85.8213043266652,
+      "Address": "Pathkind Labs, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.8,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Kidney Function Test",
+          "Price": 449
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab004": {
+      "Area": "Damana Square",
+      "Patholab Name": "Pathkind Labs",
+      "Direction Co-ordination": "20°20'10.2\"N 85°48'33.6\"E",
+      "Contact": 9938323974,
+      "storeid": "plab004",
+      "Latitude": 20.33616914202833,
+      "Longitude": 85.80933809198048,
+      "Address": "Pathkind Labs, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": false,
+      "NABL Certified": true
+    },
+    "plab005": {
+      "Area": "Damana Square",
+      "Patholab Name": "Dr. Lal Path Labs",
+      "Direction Co-ordination": "20°19'38.2\"N 85°48'36.1\"E",
+      "Contact": 7608000950,
+      "storeid": "plab005",
+      "Latitude": 20.327274031013808,
+      "Longitude": 85.81003691380737,
+      "Address": "Dr. Lal Path Labs, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab006": {
+      "Area": "Damana Square",
+      "Patholab Name": "Manas Path Lab",
+      "Direction Co-ordination": "20°20'13.4\"N 85°49'38.9\"E",
+      "Contact": "",
+      "storeid": "plab006",
+      "Latitude": 20.33706432997044,
+      "Longitude": 85.82745726813057,
+      "Address": "Manas Path Lab, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.4,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": false
+    },
+    "plab007": {
+      "Area": "Damana Square",
+      "Patholab Name": "KRISHNA HEALTH SOLUTION",
+      "Direction Co-ordination": "20°21'55.2\"N 85°49'03.7\"E",
+      "Contact": "",
+      "storeid": "plab007",
+      "Latitude": 20.36534055125247,
+      "Longitude": 85.81769062092128,
+      "Address": "KRISHNA HEALTH SOLUTION, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.3,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        }
+      ],
+      "HomeCollection": false,
+      "NABL Certified": false
+    },
+    "plab008": {
+      "Area": "Damana Square",
+      "Patholab Name": "Sadhana Clinic & Laboratory",
+      "Direction Co-ordination": "20°19'57.2\"N 85°48'48.3\"E",
+      "Contact": 9337357976,
+      "storeid": "plab008",
+      "Latitude": 20.332563233548083,
+      "Longitude": 85.81341535804714,
+      "Address": "Sadhana Clinic & Laboratory, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab009": {
+      "Area": "Damana Square",
+      "Patholab Name": "BP HEALTH CARE",
+      "Direction Co-ordination": "20°20'06.3\"N 85°49'11.9\"E",
+      "Contact": 9437880315,
+      "storeid": "plab009",
+      "Latitude": 20.3350794440249,
+      "Longitude": 85.81996732357831,
+      "Address": "BP HEALTH CARE, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab010": {
+      "Area": "Damana Square",
+      "Patholab Name": "Arogyam",
+      "Direction Co-ordination": "20°20'07.5\"N 85°49'22.2\"E",
+      "Contact": 9238613435,
+      "storeid": "plab010",
+      "Latitude": 20.335423053137568,
+      "Longitude": 85.82282999386355,
+      "Address": "Arogyam, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab011": {
+      "Area": "Damana Square",
+      "Patholab Name": "Khushi Patho Lab",
+      "Direction Co-ordination": "20°19'19.5\"N 85°49'08.3\"E",
+      "Contact": 9338224808,
+      "storeid": "plab011",
+      "Latitude": 20.322091757041967,
+      "Longitude": 85.81897552779844,
+      "Address": "Khushi Patho Lab, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.4,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": false
+    },
+    "plab012": {
+      "Area": "Damana Square",
+      "Patholab Name": "Ansh Clinic and Patholab",
+      "Direction Co-ordination": "20°22'04.4\"N 85°49'58.5\"E",
+      "Contact": 8018790904,
+      "storeid": "plab012",
+      "Latitude": 20.36659448675752,
+      "Longitude": 85.83051812544095,
+      "Address": "Ansh Clinic and Patholab, Damana Square, Bhubaneswar, Odisha RobynIndia",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab013": {
+      "Area": "Damana Square",
+      "Patholab Name": "PATHOLOGY LAB",
+      "Direction Co-ordination": "20°20'22.6\"N 85°48'34.6\"E",
+      "Contact": 9938323974,
+      "storeid": "plab013",
+      "Latitude": 20.33960637416487,
+      "Longitude": 85.8096050983977,
+      "Address": "PATHOLOGY LAB, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        }
+      ],
+      "HomeCollection": false,
+      "NABL Certified": true
+    },
+    "plab014": {
+      "Area": "Damana Square",
+      "Patholab Name": "Health Cure Poly Clinic & Lab",
+      "Direction Co-ordination": "20°20'07.9\"N 85°49'14.2\"E",
+      "Contact": 6742741523,
+      "storeid": "plab014",
+      "Latitude": 20.33553327080482,
+      "Longitude": 85.82059839605505,
+      "Address": "Health Cure Poly Clinic & Lab, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab015": {
+      "Area": "Damana Square",
+      "Patholab Name": "Acharya Drug House",
+      "Direction Co-ordination": "20°20'06.7\"N 85°49'20.3\"E",
+      "Contact": 9861416605,
+      "storeid": "plab015",
+      "Latitude": 20.335183554039705,
+      "Longitude": 85.82231500975001,
+      "Address": "Acharya Drug House, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.4,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        }
+      ],
+      "HomeCollection": false,
+      "NABL Certified": false
+    },
+    "plab016": {
+      "Area": "Damana Square",
+      "Patholab Name": "Dr Lal PathLabs - Patient Service Centre",
+      "Direction Co-ordination": "20°20'00.4\"N 85°49'02.0\"E",
+      "Contact": 8062565234,
+      "storeid": "plab016",
+      "Latitude": 20.333442284539526,
+      "Longitude": 85.81721526413385,
+      "Address": "Dr Lal PathLabs - Patient Service Centre, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab017": {
+      "Area": "Damana Square",
+      "Patholab Name": "The Clinic & Lab",
+      "Direction Co-ordination": "20°20'15.0\"N 85°48'33.3\"E",
+      "Contact": "",
+      "storeid": "plab017",
+      "Latitude": 20.337489980275148,
+      "Longitude": 85.80926177564962,
+      "Address": "The Clinic & Lab, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": false
+    },
+    "plab018": {
+      "Area": "Damana Square",
+      "Patholab Name": "Naman Diagnostics Center",
+      "Direction Co-ordination": "20°15'37.8\"N 85°47'39.3\"E",
+      "Contact": 9937041665,
+      "storeid": "plab018",
+      "Latitude": 20.260506210037917,
+      "Longitude": 85.79425334601765,
+      "Address": "Naman Diagnostics Center, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.3,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        }
+      ],
+      "HomeCollection": false,
+      "NABL Certified": true
+    },
+    "plab019": {
+      "Area": "Damana Square",
+      "Patholab Name": "SHANTI CLINIC AND LAB",
+      "Direction Co-ordination": "20°19'50.0\"N 85°48'24.3\"E",
+      "Contact": 8598975921,
+      "storeid": "plab019",
+      "Latitude": 20.33054814464137,
+      "Longitude": 85.80675857769074,
+      "Address": "SHANTI CLINIC AND LAB, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab020": {
+      "Area": "Damana Square",
+      "Patholab Name": "Dr Lal PathLabs - Patient Service Centre",
+      "Direction Co-ordination": "20°20'17.1\"N 85°48'31.5\"E",
+      "Contact": 8062645703,
+      "storeid": "plab020",
+      "Latitude": 20.338087284472362,
+      "Longitude": 85.80874679154074,
+      "Address": "Dr Lal PathLabs - Patient Service Centre, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab021": {
+      "Area": "Damana Square",
+      "Patholab Name": "Medlife Patholabs",
+      "Direction Co-ordination": "20°22'39.6\"N 85°48'59.2\"E",
+      "Contact": 9853614498,
+      "storeid": "plab021",
+      "Latitude": 20.37765898714403,
+      "Longitude": 85.8164458744245,
+      "Address": "Medlife Patholabs, Damana Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab022": {
+      "Area": "Patia Square",
+      "Patholab Name": "GENPATH DIAGNOSTICS. Metropolis Lab",
+      "Direction Co-ordination": "20°21'11.6\"N 85°49'29.2\"E",
+      "Contact": 9439389355,
+      "storeid": "plab022",
+      "Latitude": 20.35322533195416,
+      "Longitude": 85.82477656737932,
+      "Address": "GENPATH DIAGNOSTICS. Metropolis Lab, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.8,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab023": {
+      "Area": "Patia Square",
+      "Patholab Name": "Dr Lal Patho Lab",
+      "Direction Co-ordination": "20°20'55.1\"N 85°49'12.9\"E",
+      "Contact": "",
+      "storeid": "plab023",
+      "Latitude": 20.350561966784934,
+      "Longitude": 85.82161187033428,
+      "Address": "Dr Lal Patho Lab, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab024": {
+      "Area": "Patia Square",
+      "Patholab Name": "Medlife Patholabs",
+      "Direction Co-ordination": "20°22'06.0\"N 85°49'12.8\"E",
+      "Contact": 9853614498,
+      "storeid": "plab024",
+      "Latitude": 20.368325435684223,
+      "Longitude": 85.82021712154751,
+      "Address": "Medlife Patholabs, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab025": {
+      "Area": "Patia Square",
+      "Patholab Name": "Dhruba Patholab and Clinic",
+      "Direction Co-ordination": "20°21'27.2\"N 85°49'04.8\"E",
+      "Contact": 9338216195,
+      "storeid": "plab025",
+      "Latitude": 20.357562989069883,
+      "Longitude": 85.81798552909562,
+      "Address": "Dhruba Patholab and Clinic, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.4,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": false
+    },
+    "plab026": {
+      "Area": "Patia Square",
+      "Patholab Name": "Dr Lal Pathlabs Sample Collection Centre",
+      "Direction Co-ordination": "20°21'25.3\"N 85°49'40.1\"E",
+      "Contact": 9937733301,
+      "storeid": "plab026",
+      "Latitude": 20.357019817708878,
+      "Longitude": 85.82780241417683,
+      "Address": "Dr Lal Pathlabs Sample Collection Centre, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab027": {
+      "Area": "Patia Square",
+      "Patholab Name": "Dr Lal PathLabs (Authorized Center)",
+      "Direction Co-ordination": "20°19'40.9\"N 85°49'08.6\"E",
+      "Contact": 7077053357,
+      "storeid": "plab027",
+      "Latitude": 20.328035635557185,
+      "Longitude": 85.81906234284232,
+      "Address": "Dr Lal PathLabs (Authorized Center), Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab028": {
+      "Area": "Patia Square",
+      "Patholab Name": "Ansh Clinic and Patholab",
+      "Direction Co-ordination": "20°22'11.6\"N 85°49'44.1\"E",
+      "Contact": 8018790904,
+      "storeid": "plab028",
+      "Latitude": 20.369876465040882,
+      "Longitude": 85.82891370515007,
+      "Address": "Ansh Clinic and Patholab, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab029": {
+      "Area": "Patia Square",
+      "Patholab Name": "Redcliffe Labs - Collection Center",
+      "Direction Co-ordination": "20°22'18.5\"N 85°49'39.2\"E",
+      "Contact": 7969122638,
+      "storeid": "plab029",
+      "Latitude": 20.37180757156678,
+      "Longitude": 85.82754041423351,
+      "Address": "Redcliffe Labs - Collection Center, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.8,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1099
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab030": {
+      "Area": "Patia Square",
+      "Patholab Name": "Redcliffe Labs - Bhubaneswar (NABL M(EL)T Recognised)",
+      "Direction Co-ordination": "20°19'41.3\"N 85°48'53.5\"E",
+      "Contact": 8988988787,
+      "storeid": "plab030",
+      "Latitude": 20.328129638602775,
+      "Longitude": 85.81486266783045,
+      "Address": "Redcliffe Labs - Bhubaneswar (NABL M(EL)T Recognised), Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 799
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab031": {
+      "Area": "Patia Square",
+      "Patholab Name": "Krhishna Patho Lab",
+      "Direction Co-ordination": "20°22'03.4\"N 85°49'52.7\"E",
+      "Contact": 9439828868,
+      "storeid": "plab031",
+      "Latitude": 20.367623476883395,
+      "Longitude": 85.83131696425407,
+      "Address": "Krhishna Patho Lab, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab032": {
+      "Area": "Patia Square",
+      "Patholab Name": "SAISUN HEALTH CARE & GLOBAL PHARMA",
+      "Direction Co-ordination": "20°21'43.7\"N 85°48'30.6\"E",
+      "Contact": 6371368107,
+      "storeid": "plab032",
+      "Latitude": 20.362129576756406,
+      "Longitude": 85.80851196692932,
+      "Address": "SAISUN HEALTH CARE & GLOBAL PHARMA, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.4,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Fever Panel",
+          "Price": 599
+        }
+      ],
+      "HomeCollection": false,
+      "NABL Certified": false
+    },
+    "plab033": {
+      "Area": "Patia Square",
+      "Patholab Name": "Sanjibani Diagnostics",
+      "Direction Co-ordination": "20°21'48.0\"N 85°49'21.5\"E",
+      "Contact": 8144280901,
+      "storeid": "plab033",
+      "Latitude": 20.36332111881534,
+      "Longitude": 85.82264972563836,
+      "Address": "Sanjibani Diagnostics, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.6,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab034": {
+      "Area": "Patia Square",
+      "Patholab Name": "Pathkind Labs",
+      "Direction Co-ordination": "20°22'48.7\"N 85°49'50.7\"E",
+      "Contact": 8908065277,
+      "storeid": "plab034",
+      "Latitude": 20.380184614286307,
+      "Longitude": 85.83074134798132,
+      "Address": "Pathkind Labs, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.7,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Diabetic Profile",
+          "Price": 399
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab035": {
+      "Area": "Patia Square",
+      "Patholab Name": "MedPlus Patia",
+      "Direction Co-ordination": "20°21'03.0\"N 85°49'31.0\"E",
+      "Contact": 6302750241,
+      "storeid": "plab035",
+      "Latitude": 20.350823458612364,
+      "Longitude": 85.82528862149633,
+      "Address": "MedPlus Patia, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.5,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Thyroid Profile",
+          "Price": 499
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 1999
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    },
+    "plab036": {
+      "Area": "Patia Square",
+      "Patholab Name": "Redcliffe Labs",
+      "Direction Co-ordination": "20°20'17.2\"N 85°48'30.6\"E",
+      "Contact": 7969122538,
+      "storeid": "plab036",
+      "Latitude": 20.33810821504227,
+      "Longitude": 85.80851196699125,
+      "Address": "Redcliffe Labs, Patia Square, Bhubaneswar, Odisha, India",
+      "Rating": 4.8,
+      "Services": [
+        {
+          "Test": "Complete Blood Count (CBC)",
+          "Price": 299
+        },
+        {
+          "Test": "Lipid Profile",
+          "Price": 599
+        },
+        {
+          "Test": "Full Body Checkup",
+          "Price": 799
+        }
+      ],
+      "HomeCollection": true,
+      "NABL Certified": true
+    }},
+  "medicineStores": {
+    "ssms001": {
+      "Area": "Damana Square",
+      "StoreName": "Apollo Pharmacy",
+      "DirectionCoordination": "20°19'60.0\"N 85°49'09.3\"E",
+      "ContactNumber": 6742743747,
+      "StoreId": "ssms001",
+      "Latitude": 20.333325196038743,
+      "Longitude": 85.81923841099838,
+      "Address": "Apollo Pharmacy, Damana Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med001",
+          "Name": "Paracetamol 500mg",
+          "Price": 50,
+          "Dosage": "1 tablet every 6 hours",
+          "Category": "pain-relief",
+          "Offers": "10% off",
+          "Stock": 100,
+          "GenericAlternative": {
+            "Name": "Generic Paracetamol 500mg",
+            "Price": 35
+          }
+        },
+        {
+          "MedicineId": "med002",
+          "Name": "Amoxicillin 250mg",
+          "Price": 150,
+          "Dosage": "1 capsule twice daily",
+          "Category": "antibiotics",
+          "Offers": "15% off",
+          "Stock": 50,
+          "GenericAlternative": {
+            "Name": "Generic Amoxicillin 250mg",
+            "Price": 105
+          }
+        }
+      ]
+    },
+    "ssms002": {
+      "Area": "Damana Square",
+      "StoreName": "Acharya Drug House",
+      "DirectionCoordination": "20°20'00.5\"N 85°49'17.5\"E",
+      "ContactNumber": 9861416605,
+      "StoreId": "ssms002",
+      "Latitude": 20.333466724538408,
+      "Longitude": 85.8215340764356,
+      "Address": "Acharya Drug House, Damana Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med003",
+          "Name": "Metformin 500mg",
+          "Price": 200,
+          "Dosage": "1 tablet daily",
+          "Category": "diabetes",
+          "Offers": "Buy 1 Get 1 Free",
+          "Stock": 30,
+          "GenericAlternative": {
+            "Name": "Generic Metformin 500mg",
+            "Price": 140
+          }
+        },
+        {
+          "MedicineId": "med004",
+          "Name": "Aspirin 75mg",
+          "Price": 30,
+          "Dosage": "1 tablet daily",
+          "Category": "pain-relief",
+          "Offers": "20% off",
+          "Stock": 200,
+          "GenericAlternative": {
+            "Name": "Generic Aspirin 75mg",
+            "Price": 21
+          }
+        }
+      ]
+    },
+    "ssms003": {
+      "Area": "Damana Square",
+      "StoreName": "Nigam Drug House",
+      "DirectionCoordination": "20°19'51.9\"N 85°49'18.0\"E",
+      "ContactNumber": 6742743774,
+      "StoreId": "ssms003",
+      "Latitude": 20.331093,
+      "Longitude": 85.821663,
+      "Address": "Nigam Drug House, Damana Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med005",
+          "Name": "Ibuprofen 400mg",
+          "Price": 80,
+          "Dosage": "1 tablet every 8 hours",
+          "Category": "pain-relief",
+          "Offers": "5% off",
+          "Stock": 75,
+          "GenericAlternative": {
+            "Name": "Generic Ibuprofen 400mg",
+            "Price": 56
+          }
+        }
+      ]
+    },
+    "ssms004": {
+      "Area": "Damana Square",
+      "StoreName": "Shree Ganesh Medical Store",
+      "DirectionCoordination": "20°20'00.8\"N 85°49'16.1\"E",
+      "ContactNumber": 7008803294,
+      "StoreId": "ssms004",
+      "Latitude": 20.333547,
+      "Longitude": 85.821148,
+      "Address": "Shree Ganesh Medical Store, Damana Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med006",
+          "Name": "Losartan 50mg",
+          "Price": 120,
+          "Dosage": "1 tablet daily",
+          "Category": "hypertension",
+          "Offers": "10% off",
+          "Stock": 60,
+          "GenericAlternative": {
+            "Name": "Generic Losartan 50mg",
+            "Price": 84
+          }
+        }
+      ]
+    },
+    "ssms005": {
+      "Area": "Damana Square",
+      "StoreName": "Phoenix Drug House",
+      "DirectionCoordination": "20°19'57.1\"N 85°49'22.7\"E",
+      "ContactNumber": 9861578238,
+      "StoreId": "ssms005",
+      "Latitude": 20.332526,
+      "Longitude": 85.822973,
+      "Address": "Phoenix Drug House, Damana Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med007",
+          "Name": "Cetirizine 10mg",
+          "Price": 25,
+          "Dosage": "1 tablet daily",
+          "Category": "otc",
+          "Offers": "15% off",
+          "Stock": 150,
+          "GenericAlternative": {
+            "Name": "Generic Cetirizine 10mg",
+            "Price": 17
+          }
+        }
+      ]
+    },
+    "ssms006": {
+      "Area": "Damana Square",
+      "StoreName": "Maa Tarini Medical Store",
+      "DirectionCoordination": "20°20'04.3\"N 85°49'19.7\"E",
+      "ContactNumber": 9778050903,
+      "StoreId": "ssms006",
+      "Latitude": 20.334523,
+      "Longitude": 85.822124,
+      "Address": "Maa Tarini Medical Store, Damana Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med008",
+          "Name": "Azithromycin 500mg",
+          "Price": 180,
+          "Dosage": "1 tablet daily",
+          "Category": "antibiotics",
+          "Offers": "10% off",
+          "Stock": 40,
+          "GenericAlternative": {
+            "Name": "Generic Azithromycin 500mg",
+            "Price": 126
+          }
+        }
+      ]
+    },
+    "ssms007": {
+      "Area": "Patia Square",
+      "StoreName": "BISWAL MEDIC POINT",
+      "DirectionCoordination": "20°20'33.3\"N 85°49'19.1\"E",
+      "ContactNumber": 9937432929,
+      "StoreId": "ssms007",
+      "Latitude": 20.342594,
+      "Longitude": 85.821959,
+      "Address": "BISWAL MEDIC POINT, Patia Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med009",
+          "Name": "Glibenclamide 5mg",
+          "Price": 90,
+          "Dosage": "1 tablet daily",
+          "Category": "diabetes",
+          "Offers": "20% off",
+          "Stock": 80,
+          "GenericAlternative": {
+            "Name": "Generic Glibenclamide 5mg",
+            "Price": 63
+          }
+        }
+      ]
+    },
+    "ssms008": {
+      "Area": "Patia Square",
+      "StoreName": "Apollo Pharmacy Kiit Square",
+      "DirectionCoordination": "20°21'15.6\"N 85°49'17.7\"E",
+      "ContactNumber": 7682816638,
+      "StoreId": "ssms008",
+      "Latitude": 20.354335,
+      "Longitude": 85.82157,
+      "Address": "Apollo Pharmacy Kiit Square, Patia Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med010",
+          "Name": "Paracetamol 500mg",
+          "Price": 50,
+          "Dosage": "1 tablet every 6 hours",
+          "Category": "pain-relief",
+          "Offers": "10% off",
+          "Stock": 120,
+          "GenericAlternative": {
+            "Name": "Generic Paracetamol 500mg",
+            "Price": 35
+          }
+        }
+      ]
+    },
+    "ssms009": {
+      "Area": "Patia Square",
+      "StoreName": "Sairam Medicine Store",
+      "DirectionCoordination": "20°20'55.1\"N 85°49'28.8\"E",
+      "ContactNumber": 9938152564,
+      "StoreId": "ssms009",
+      "Latitude": 20.348637,
+      "Longitude": 85.824666,
+      "Address": "Sairam Medicine Store, Patia Square, Bhubaneswar, Odisha, India",
+      "Medicines": [
+        {
+          "MedicineId": "med011",
+          "Name": "Amlodipine 5mg",
+          "Price": 100,
+          "Dosage": "1 tablet daily",
+          "Category": "hypertension",
+          "Offers": "10% off",
+          "Stock": 90,
+          "GenericAlternative": {
+            "Name": "Generic Amlodipine 5mg",
+            "Price": 70
+          }
+        }
+      ]
+    }
+  }
+}
