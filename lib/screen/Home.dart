@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Hello $userName",
+                      "Hello 🖐️",
                       style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
@@ -86,9 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     CircleAvatar(
-                      radius: 60,
+                      radius: 40,
                       backgroundColor: const Color.fromARGB(255, 151, 210, 250),
-                      backgroundImage: AssetImage("assets/images/user1.png"),
+                      backgroundImage: AssetImage("assets/images/user2.png"),
                     ),
                   ],
                 ),

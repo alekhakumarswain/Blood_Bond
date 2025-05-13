@@ -33,7 +33,7 @@ class WelcomeScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: Image.asset(
-                    "assets/images/doctors.png",
+                    "assets/images/bloodbond-logo.png",
                     height: 250,
                     fit: BoxFit.contain,
                   ),
